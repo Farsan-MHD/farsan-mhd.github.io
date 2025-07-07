@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Devaloper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    
+    <header id="nav-section">
+        <nav class="navbar">
+            <div class="logo">Farsan MHD</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="#welcom-bennar">Home</a>
+                <a href="#about-section">About</a>
+                <a href="#skills-section">Skills</a>
+                <a href="#project-section">Projects</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="welcom-bennar">
+        <div class="welcom-text">
+            <h1 class="welcom-header">Welcome to My Portfolio</h1>
+            <p class="welcom-pera">Explore my projects and skills in web development.</p>
+        </div>
+    </section>
+
+    <section id="about-section">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="images/devaloper-image.webp" alt="Farsan MHD" id="about-image">
+            </div>
+            <div class="about-text">
+                <div id="typewriter"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-section">
+        <div class="skills-cert-container">
+            <div class="skills-list-div">
+                <h2 class="skills-title">My Skills</h2>
+                <ul class="skills-list">
+                    <li>HTML &amp; CSS</li>
+                    <li>Tailwind CSS</li>
+                    <li>JavaScript</li>
+                    <li>Node.js</li>
+                    <li>React.js</li>
+                    <li>MongoDB</li>
+                    <li>Prisma</li>
+                </ul>
+            </div>
+            <div class="certificate-grid">
+                <img src="images/Black Gold Modern Elegant Certificate of Competition Certificate.webp" alt="certificate" class="cert-img">
+                <img src="images/Blue and White Simple Modern Certificate of Appreciation.webp" alt="certificate" class="cert-img">
+                <img src="images/Gold and White Elegant Appreciation Certificate.webp" alt="certificate" class="cert-img">
+                <img src="images/Screenshot 2025-07-06 205005.webp" alt="certificate" class="cert-img">
+            </div>
+        </div>
+        <!-- Preview Modal -->
+        <div id="cert-preview" class="cert-preview-modal">
+            <span id="close-preview" class="close-preview">&times;</span>
+            <img id="preview-img" src="" alt="Certificate Preview">
+        </div>
+    </section>
+
+    <section id="project-section">
+        <div class="container">
+            <!-- Project 1: Image Project -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f7c52bc0-2f8a-43e5-b4ac-94247e4f9238.png" alt="Digital photography project showcasing professional studio work with lighting equipment and DSLR cameras" />
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">Creative</span>
+                    <h3 class="card-title">Visual Arts Showcase</h3>
+                    <p class="card-description">
+                        A professional photography project presenting stunning visual narratives through carefully composed images. 
+                        This collection highlights technical mastery in lighting, composition, and post-processing.
+                    </p>
+                    <a href="#" class="btn">View Portfolio</a>
+                </div>
+            </div>
+            
+            <!-- Project 2: Sri Lanka Charity -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17f3ea15-7edd-46b4-8b01-34ad3491598e.png" alt="Children smiling at a Sri Lankan village school with volunteers helping in education programs" />
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">Non-Profit</span>
+                    <h3 class="card-title">Sri Lanka Education Initiative</h3>
+                    <p class="card-description">
+                        A heartwarming charity project supporting rural education in Sri Lanka. 
+                        Providing resources, infrastructure, and mentorship to underserved communities.
+                    </p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Project 3: Online Shops -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/df75b91c-7abf-4448-a8f6-f2f2897d5706.png" alt="Modern e-commerce dashboard with analytics graphs and product management interface" />
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">E-Commerce</span>
+                    <h3 class="card-title">Online Marketplace Platform</h3>
+                    <p class="card-description">
+                        A robust e-commerce solution with seamless checkout, inventory management, 
+                        and customer analytics for modern online retail businesses.
+                    </p>
+                    <a href="#" class="btn">See Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <div class="contact-se-1 contact-div">
+            <div class="container-for-contact" role="main" aria-label="Contact Form for Farsan MHD web developer">
+                <div class="contact-header">
+                    <div class="avatar">
+                        <img src="images/devaloper-profile-image.webp" alt="devaloper image" srcset="">
+                    </div>
+                    <div class="header-text">
+                        <h1>Farsan MHD</h1>
+                        <p>Web Developer</p>
+                    </div>
+                </div>
+                <form id="contactForm" novalidate autocomplete="off" aria-live="polite" aria-describedby="formStatus">
+                    <label for="nameInput">Name</label>
+                    <input type="text" id="nameInput" name="name" placeholder="Your full name" required autocomplete="name" style="border-bottom-style: solid;" />
+
+                    <label for="phoneInput">Phone no.</label>
+                    <input type="text" id="phoneInput" name="phone" placeholder="+1234567890" required autocomplete="tel" style="border-bottom-style: solid;" pattern="[\d+\-\s]+" title="Please enter a valid phone number" />
+
+                    <label for="emailInput">Email address</label>
+                    <input type="email" id="emailInput" name="email" placeholder="address@example.com" required autocomplete="email" style="border-bottom-style: solid;" />
+
+                    <label for="subjectInput">Subject</label>
+                    <textarea id="subjectInput" name="subject" placeholder="Write your message here..." required></textarea>
+
+                    <div class="buttons">
+                        <button type="reset" class="reset-btn" aria-label="Reset form fields">Reset</button>
+                        <button type="submit" class="submit-btn" aria-label="Submit form">
+                        <span class="btn-text">Submit</span>
+                        <span class="loader" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <p id="formStatus" role="alert" aria-live="assertive" class="sr-only"></p>
+                </form>
+            </div>
+        </div>
+        <div class="contact-se-2 contact-div">
+            <img src="images/contact-image.webp" alt="contact image" srcset="">
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <span class="footer-name">© 2025 Farsan MHD</span>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/farsan-mhd-0ab70a320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn" class="footer-icon linkedin">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/33840042" target="_blank" aria-label="WhatsApp" class="footer-icon whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto:mohammedfarsan603@gmail.com" aria-label="Gmail" class="footer-icon gmail">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+                <a href="https://x.com/farsan_mhd?s=21" target="_blank" aria-label="X (Twitter)" class="footer-icon twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
