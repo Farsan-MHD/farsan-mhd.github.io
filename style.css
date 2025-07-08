@@ -837,9 +837,6 @@ body{
         width: 250px;
         height: 300px;
     }
-    #typewriter{
-        height: 500px;
-    }
     .skills-cert-container{
         display: flex;
         flex-direction: column;
