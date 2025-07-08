@@ -169,6 +169,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding: 10px 0;
 }
 @keyframes blink-caret {
     0%, 100% { border-color: transparent; }
