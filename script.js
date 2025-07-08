@@ -101,35 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-// Certificate preview modal logic
-document.addEventListener('DOMContentLoaded', () => {
-    const certImgs = document.querySelectorAll('.cert-img');
-    const previewModal = document.getElementById('cert-preview');
-    const previewImg = document.getElementById('preview-img');
-    const closePreview = document.getElementById('close-preview');
-
-    certImgs.forEach(img => {
-        img.addEventListener('click', () => {
-            previewImg.src = img.src;
-            previewModal.classList.add('active');
-        });
-    });
-
-    closePreview.addEventListener('click', () => {
-        previewModal.classList.remove('active');
-        setTimeout(() => {
-            previewImg.src = '';
-        }, 300);
-    });
-
-    // Optional: close modal on background click
-    previewModal.addEventListener('click', (e) => {
-        if (e.target === previewModal) {
-            closePreview.click();
-        }
-    });
-});
-
 const form = document.getElementById('contactForm');
 const submitBtn = form.querySelector('button[type="submit"]');
 const btnText = submitBtn.querySelector('.btn-text');
