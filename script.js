@@ -72,6 +72,35 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//skills list scrip
+document.addEventListener('DOMContentLoaded', () => {
+      // Animate progress bars when they come into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressFill = entry.target.querySelector('.progress-fill');
+            if (!progressFill.classList.contains('animate-progress')) {
+              progressFill.classList.add('animate-progress');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      document.querySelectorAll('.skill-card').forEach(card => {
+        observer.observe(card);
+      });
+      
+      // Add glow effect on hover
+      document.querySelectorAll('.skill-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          const highlightCircle = card.querySelector('.highlight-circle');
+          highlightCircle.style.left = `${Math.random() * 60 + 20}%`;
+          highlightCircle.style.top = `${Math.random() * 60 + 20}%`;
+        });
+      });
+    });
+
 // Certificate preview modal logic
 document.addEventListener('DOMContentLoaded', () => {
     const certImgs = document.querySelectorAll('.cert-img');
