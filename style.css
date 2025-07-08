@@ -159,12 +159,11 @@ body{
     justify-content: center;
 }
 #typewriter {
-    height: 500px;
+    min-height: 500px;
     white-space: pre-line;
     overflow: hidden;
     display: inline-block;
     font-size: 1.15rem;
-    min-height: 2.2em;
     letter-spacing: 1px;
     animation: blink-caret 0.7s step-end infinite;
     display: flex;
