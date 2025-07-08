@@ -826,9 +826,6 @@ body{
     .welcom-pera{
         font-size: 22px;
     }
-    #about-section{
-        min-height: 800px;
-    }
     .about-container {
         padding: 20px;
         flex-direction: column;
@@ -842,9 +839,6 @@ body{
     }
     #typewriter{
         height: 500px;
-    }
-    #skills-section{
-        min-height: 400px;
     }
     .skills-cert-container{
         display: flex;
