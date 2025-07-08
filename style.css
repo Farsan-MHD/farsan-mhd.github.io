@@ -764,6 +764,9 @@ body{
         width: 250px;
         height: 300px;
     }
+    #typewriter{
+        height: 500px;
+    }
     #skills-section{
         min-height: 400px;
     }
