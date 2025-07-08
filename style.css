@@ -167,7 +167,6 @@ body{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 10px 0;
 }
 @keyframes blink-caret {
     0%, 100% { border-color: transparent; }
@@ -249,7 +248,7 @@ body{
       width: var(--value);
     }
     
-    h1::after {
+    #skills-header::after {
       content: '';
       display: block;
       width: 100px;
