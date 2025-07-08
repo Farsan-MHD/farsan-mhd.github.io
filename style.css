@@ -158,7 +158,6 @@ body{
     justify-content: center;
 }
 #typewriter {
-    min-height: 500px;
     white-space: pre-line;
     overflow: hidden;
     display: inline-block;
