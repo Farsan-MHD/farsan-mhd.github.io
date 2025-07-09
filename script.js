@@ -38,7 +38,6 @@ window.addEventListener('DOMContentLoaded', () => {
         "Always learning. Always building. Let’s create something amazing!"
     ];
     const typewriter = document.getElementById('typewriter');
-    const aboutImg = document.getElementById('about-image');
     let p = 0, i = 0;
 
     function type() {
@@ -63,13 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     type();
-
-    // Animate about image
-    if (aboutImg) {
-        setTimeout(() => {
-            aboutImg.classList.add('visible');
-        }, 600);
-    }
 });
 
 //skills list scrip
@@ -160,3 +152,90 @@ function stopSendingAnimation() {
     btnText.style.visibility = 'visible';
     loader.style.visibility = 'hidden';
 }
+
+// =========================================================
+
+// Dropdown toggle
+const aToggle = document.querySelector('.a-toggle');
+const aDropdown = document.getElementById('aDropdown');
+aToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    aDropdown.classList.toggle('active');
+    aToggle.classList.toggle('active');
+});
+document.addEventListener('click', () => {
+    aDropdown.classList.remove('active');
+    aToggle.classList.remove('active');
+});
+
+// Language switching (simple demo)
+const arText = {
+    "Welcome to My Portfolio": "مرحبًا بكم في ملفي الشخصي",
+    "Explore my projects and skills in web development.": "استكشف مشاريعي ومهاراتي في تطوير الويب.",
+    "My Technical Expertise": "خبرتي التقنية",
+    "A comprehensive display of my web development skills and proficiency levels": "عرض شامل لمهاراتي ومستوى إتقاني في تطوير الويب",
+    "My Projects": "مشاريعي",
+    "A showcase of my real-world projects and creative solutions": "عرض لمشاريعي الواقعية وحلول الإبداعية",
+    "Contact": "اتصل بي",
+    "Hi, I’m Mohammed Farsan — a passionate Front-End Web Developer skilled in HTML, CSS, and JavaScript. I craft clean, responsive, and visually engaging websites that work flawlessly across devices.":"مرحباً، أنا محمد فرسان، مطور ويب شغوف بواجهات المستخدم الأمامية، متخصص في HTML وCSS وJavaScript. أصمم مواقع ويب أنيقة، سريعة الاستجابة، وجذابة بصرياً، تعمل بسلاسة على جميع الأجهزة.",
+    "With a creative mindset and a love for problem-solving, I blend design and functionality to deliver user-friendly digital experiences. I’m currently expanding into Python and AI to build smarter web solutions.":"بعقلية إبداعية وشغف بحل المشكلات، أدمج التصميم والوظائف لتقديم تجارب رقمية سهلة الاستخدام. أعمل حاليًا على توسيع نطاقي في بايثون والذكاء الاصطناعي لبناء حلول ويب أكثر ذكاءً.",
+    "Always learning. Always building. Let’s create something amazing!":"نتعلم دائمًا، ونبني دائمًا. هيا نبتكر شيئًا مذهلًا!",
+    "Projects":"المشاريع",
+    "Skills":"مهارات",
+    "About":"عن",
+    "Home":"بيت"
+    // Add more as needed...
+};
+const enText = {
+    "مرحبًا بكم في ملفي الشخصي": "Welcome to My Portfolio",
+    "استكشف مشاريعي ومهاراتي في تطوير الويب.": "Explore my projects and skills in web development.",
+    "خبرتي التقنية": "My Technical Expertise",
+    "عرض شامل لمهاراتي ومستوى إتقاني في تطوير الويب": "A comprehensive display of my web development skills and proficiency levels",
+    "مشاريعي": "My Projects",
+    "عرض لمشاريعي الواقعية وحلول الإبداعية": "A showcase of my real-world projects and creative solutions",
+    "اتصل بي": "Contact",
+    "مرحباً، أنا محمد فرسان، مطور ويب شغوف بواجهات المستخدم الأمامية، متخصص في HTML وCSS وJavaScript. أصمم مواقع ويب أنيقة، سريعة الاستجابة، وجذابة بصرياً، تعمل بسلاسة على جميع الأجهزة.":"Hi, I’m Mohammed Farsan — a passionate Front-End Web Developer skilled in HTML, CSS, and JavaScript. I craft clean, responsive, and visually engaging websites that work flawlessly across devices.",
+    "بعقلية إبداعية وشغف بحل المشكلات، أدمج التصميم والوظائف لتقديم تجارب رقمية سهلة الاستخدام. أعمل حاليًا على توسيع نطاقي في بايثون والذكاء الاصطناعي لبناء حلول ويب أكثر ذكاءً.":"With a creative mindset and a love for problem-solving, I blend design and functionality to deliver user-friendly digital experiences. I’m currently expanding into Python and AI to build smarter web solutions.",
+    "نتعلم دائمًا، ونبني دائمًا. هيا نبتكر شيئًا مذهلًا!":"Always learning. Always building. Let’s create something amazing!",
+    "المشاريع":"Projects",
+    "مهارات":"Skills",
+    "عن":"About",
+    "بيت":"Home"
+    // Add more as needed...
+};
+function switchLang(dict) {
+    document.querySelectorAll('h1, h2, h3, p, a, button, span').forEach(el => {
+        if (dict[el.textContent.trim()]) {
+            el.textContent = dict[el.textContent.trim()];
+        }
+    });
+}
+document.getElementById('lang-ar').onclick = function(e) {
+    switchLang(arText);
+    this.textContent = "العربية";
+    document.getElementById('lang-en').textContent = "English";
+};
+document.getElementById('lang-en').onclick = function(e) {
+    switchLang(enText);
+    this.textContent = "English";
+    document.getElementById('lang-ar').textContent = "العربية";
+};
+
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeLabel = document.getElementById('theme-label');
+themeToggle.onclick = function() {
+    document.body.classList.toggle('light-theme');
+    themeLabel.textContent = document.body.classList.contains('light-theme') ? "Dark T" : "Light T";
+};
+
+// Download CV
+document.getElementById('download-cv').onclick = function() {
+    // Replace with your actual CV file path
+    const link = document.createElement('a');
+    link.href = 'Farsan-Front-End-Resume.pdf';
+    link.download = 'Farsan-MHD-Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
