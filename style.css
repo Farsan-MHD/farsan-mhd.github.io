@@ -147,6 +147,7 @@ body.light-theme h6,
 body.light-theme p,
 body.light-theme span,
 body.light-theme a,
+body.menu-toggle,
 body.light-theme li,
 body.light-theme .welcom-header,
 body.light-theme .welcom-pera,
@@ -853,6 +854,9 @@ body.light-theme .footer-copy {
     .navbar .nav-links a {
         padding: 14px 20px;
         border-bottom: 1px solid #223b8a;
+    }
+    .a-toggle{
+      display: none;
     }
     .navbar .menu-toggle {
         display: flex;
