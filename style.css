@@ -139,7 +139,7 @@ body{
 .profile-container {
   position: relative;
   width: 300px; /* adjust size as needed */
-  margin: 100px auto;
+  margin: 0 auto;
   text-align: center;
 }
 
