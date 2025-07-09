@@ -549,7 +549,7 @@ body{
     border: none;
     outline: none;
     font-size: 1rem;
-    padding: 6px 4px 4px 10px;
+    padding: 10px 4px 4px 10px;
     border-bottom: 2px solid #c1c1c1;
     transition: border-color 0.3s ease;
     font-family: inherit;
@@ -561,7 +561,7 @@ body{
   textarea {
     border: 2px solid #c1c1c1;
     border-radius: 8px;
-    padding: 8px;
+    padding: 10px 8px;
     resize: vertical;
     min-height: 90px;
     transition: border-color 0.3s ease;
