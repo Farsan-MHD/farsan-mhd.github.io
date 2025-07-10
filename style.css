@@ -57,9 +57,7 @@ body{
     cursor: pointer;
     user-select: none;
     margin-left: 18px;
-    position: fixed;
-    top: 70px;
-    right: 20px;
+    position: relative;
     z-index: 100;
     color: #1e3a8a;
     background: #fff;
