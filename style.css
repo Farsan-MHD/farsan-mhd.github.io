@@ -856,9 +856,6 @@ body.light-theme .footer-copy {
         padding: 14px 20px;
         border-bottom: 1px solid #223b8a;
     }
-    .a-toggle{
-      display: none;
-    }
     .navbar .menu-toggle {
         display: flex;
     }
