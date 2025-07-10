@@ -57,7 +57,7 @@ body{
     cursor: pointer;
     user-select: none;
     margin-left: 18px;
-    position: relative;
+    position: absolute;
     top: 60px;
     left: 20px;
     z-index: 100;
