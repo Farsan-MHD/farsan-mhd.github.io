@@ -859,6 +859,9 @@ body.light-theme .footer-copy {
     .navbar .menu-toggle {
         display: flex;
     }
+    .a-toggle {
+        display: none;
+    }
     .welcom-header{
         font-size: 32px;
     }
