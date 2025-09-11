@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Farsan MHD</title>
+    <link rel="stylesheet" href="style sheets/about.css">
+</head>
+<body class="about-bg">
+    <!-- Hero Banner -->
+    <section class="hero-banner animate-fade-top">
+        <h1 class="hero-title">About Me</h1>
+        <p class="hero-subtitle">Learn more about my journey, career, and goals</p>
+    </section>
+
+    <main class="about-content">
+        <!-- Introduction -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Introduction</h2>
+            <p class="about-paragraph animate-fade-left">
+                Hi, I’m Farsan MHD. I am passionate about web development, cybersecurity, and continuous learning. This page is where I share my journey in detail.
+            </p>
+        </section>
+
+        <!-- Career & Experience -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Career & Experience</h2>
+            <p class="about-paragraph animate-fade-right">
+                My professional journey began as a Supervisor & Storekeeper, where I honed my skills in leadership, coordination, and problem-solving. Alongside my career, I embarked on a self-learning adventure in coding and cybersecurity, dedicating countless hours to mastering web technologies and understanding the intricacies of digital security. My commitment to growth drives me to explore new challenges and continuously expand my expertise.
+            </p>
+        </section>
+
+        <!-- Skills Overview -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Skills Overview</h2>
+            <ul class="skills-list">
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> HTML, CSS, JavaScript</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> React, Node.js, MongoDB, Express, PostgreSQL</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> Cybersecurity (Red Team learning path)</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> Excel (advanced)</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> Problem-Solving, Leadership, Coordination</li>
+            </ul>
+        </section>
+
+        <!-- Vision & Goals -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Vision & Goals</h2>
+            <p class="about-paragraph animate-fade-left">
+                My dream is to become a <span class="highlight-pink">Red Team Cybersecurity Expert</span>, dedicated to fighting <span class="highlight-pink">dark web crimes</span> and protecting <span class="highlight-pink">lives</span>. I strive to make a meaningful impact by using my skills to safeguard digital spaces and empower others in the face of evolving cyber threats.
+            </p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const animatedEls = document.querySelectorAll('.animate-fade-left, .animate-fade-right, .animate-slide-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            animatedEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

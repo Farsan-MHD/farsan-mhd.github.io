@@ -1,0 +1,283 @@
+/* --- Base Colors --- */
+:root {
+    --royal-indigo: #1E1B4B;
+    --sakura-pink: #EC4899;
+    --golden-yellow: #FBBF24;
+    --lavender: #E9D5FF;
+    --lavender-light: #FDF4FF;
+    --white: #fff;
+}
+
+/* --- Body & Background --- */
+body.about-bg {
+    background: var(--royal-indigo);
+    color: var(--lavender);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    width: 100%;
+}
+
+/* --- Hero Banner --- */
+.hero-banner {
+    width: 100%;
+    min-height: 250px;
+    background: linear-gradient(120deg, var(--royal-indigo) 80%, var(--sakura-pink) 100%);
+    text-align: center;
+    box-shadow: 0 6px 32px 0 rgba(236,72,153,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--lavender-light);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    text-shadow: 0 0 18px var(--sakura-pink);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--lavender);
+    opacity: 0.95;
+    margin: 0 auto;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+/* --- Main Content Layout --- */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+/* --- Section Headers --- */
+.section-header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--golden-yellow);
+    margin-bottom: 18px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.section-header::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--sakura-pink);
+    box-shadow: 0 0 12px var(--sakura-pink), 0 0 24px var(--sakura-pink);
+    opacity: 0.8;
+    animation: underline-glow 1.2s ease-in-out;
+}
+
+@keyframes underline-glow {
+    0% { width: 0; opacity: 0; }
+    60% { width: 80px; opacity: 1; }
+    100% { width: 80px; opacity: 0.8; }
+}
+
+/* --- Paragraphs --- */
+.about-paragraph {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.18rem;
+    line-height: 1.8;
+    color: var(--lavender-light);
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* --- Highlighted Pink Words --- */
+.highlight-pink {
+    color: #EC4899;
+    font-weight: 600;
+    background: rgba(236,72,153,0.08);
+    padding: 2px 6px;
+    border-radius: 6px;
+    box-shadow: 0 0 2px #EC4899;
+}
+
+/* --- Skills List --- */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.skill-item {
+    font-size: 1.13rem;
+    color: var(--lavender);
+    background: rgba(30,27,75,0.7);
+    border-radius: 12px;
+    padding: 12px 24px;
+    box-shadow: 0 0 12px 0 rgba(236,72,153,0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: box-shadow 0.3s, color 0.3s;
+    cursor: default;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: skill-appear 0.7s forwards;
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.2s; }
+.skill-item:nth-child(2) { animation-delay: 0.4s; }
+.skill-item:nth-child(3) { animation-delay: 0.6s; }
+.skill-item:nth-child(4) { animation-delay: 0.8s; }
+.skill-item:nth-child(5) { animation-delay: 1s; }
+
+.skill-icon {
+    font-size: 1.3em;
+    color: var(--sakura-pink);
+    filter: drop-shadow(0 0 6px var(--sakura-pink));
+    transition: filter 0.3s;
+}
+
+.skill-item:hover .skill-icon {
+    filter: drop-shadow(0 0 16px var(--sakura-pink));
+    color: var(--golden-yellow);
+}
+
+/* --- Animations --- */
+@keyframes fade-top {
+    0% { opacity: 0; transform: translateY(-40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fade-left {
+    0% { opacity: 0; transform: translateX(-40px);}
+    100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes fade-right {
+    0% { opacity: 0; transform: translateX(40px);}
+    100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes slide-up {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes skill-appear {
+    0% { opacity: 0; transform: translateY(30px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Animation Classes --- */
+.animate-fade-top {
+    opacity: 0;
+    animation: fade-top 1.2s forwards;
+}
+.animate-fade-left {
+    opacity: 0;
+    animation: fade-left 1.2s forwards;
+}
+.animate-fade-right {
+    opacity: 0;
+    animation: fade-right 1.2s forwards;
+}
+.animate-slide-up {
+    opacity: 0;
+    animation: slide-up 1s forwards;
+}
+
+/* --- Scroll Animation (Intersection Observer) --- */
+.animate-fade-left,
+.animate-fade-right,
+.animate-slide-up {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1 !important;
+    animation-play-state: running !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .about-content {
+        max-width: 98vw;
+        padding: 28px 8px 40px 8px;
+        gap: 36px;
+    }
+    .hero-banner {
+        padding: 60px 10px 40px 10px;
+    }
+    .hero-title {
+        font-size: 2.1rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .section-header {
+        font-size: 1.2rem;
+    }
+    .about-paragraph {
+        font-size: 1rem;
+        padding: 0 2px;
+    }
+    .skills-list {
+        max-width: 98vw;
+        gap: 12px;
+    }
+    .skill-item {
+        padding: 10px 12px;
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-content {
+        padding: 12px 2px 24px 2px;
+        gap: 24px;
+    }
+    .hero-banner {
+        padding: 36px 2px 24px 2px;
+    }
+    .hero-title {
+        font-size: 1.3rem;
+    }
+    .hero-subtitle {
+        font-size: 0.98rem;
+    }
+    .section-header {
+        font-size: 1rem;
+    }
+    .about-paragraph {
+        font-size: 0.92rem;
+        padding: 0 1px;
+    }
+    .skills-list {
+        gap: 8px;
+    }
+    .skill-item {
+        padding: 8px 8px;
+        font-size: 0.92rem;
+    }
+}
+
+/* Make sure images, if any, are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Sakura Petal Animation (Optional) --- */
+/* Add a subtle falling sakura petal effect if you want extra flair! */

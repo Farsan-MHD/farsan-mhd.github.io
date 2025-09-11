@@ -1,0 +1,299 @@
+:root {
+    --royal-indigo: #1E1B4B;
+    --sakura-pink: #EC4899;
+    --golden-yellow: #FBBF24;
+    --lavender: #E9D5FF;
+    --lavender-light: #FDF4FF;
+    --white: #fff;
+}
+
+body.resume-bg {
+    background: var(--royal-indigo);
+    color: var(--lavender);
+    font-family: 'Inter', 'Poppins', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* --- Download Button --- */
+.download-btn {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    background: var(--sakura-pink);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1.08rem;
+    font-weight: 600;
+    padding: 12px 28px 12px 18px;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 0 12px 0 rgba(236,72,153,0.18);
+    text-decoration: none;
+    transition: box-shadow 0.3s, background 0.3s, color 0.3s;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+    background: var(--sakura-pink);
+    color: var(--golden-yellow);
+    box-shadow: 0 0 24px 0 var(--golden-yellow), 0 0 8px var(--sakura-pink);
+    outline: none;
+}
+
+/* --- Resume Layout --- */
+.resume-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 48px auto;
+    background: rgba(30,27,75,0.98);
+    border-radius: 18px;
+    box-shadow: 0 8px 40px 0 rgba(236,72,153,0.10);
+    overflow: hidden;
+}
+
+.resume-left {
+    width: 32%;
+    background: linear-gradient(120deg, var(--royal-indigo) 80%, var(--sakura-pink) 100%);
+    padding: 38px 28px 38px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    color: var(--lavender-light);
+    box-shadow: 0 0 24px 0 rgba(236,72,153,0.08);
+}
+
+.resume-right {
+    width: 68%;
+    padding: 38px 38px 38px 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    background: rgba(30,27,75,0.98);
+}
+
+.profile-block {
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.resume-name {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--golden-yellow);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.resume-title {
+    font-size: 1.1rem;
+    color: var(--sakura-pink);
+    font-weight: 600;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+.section-header {
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: var(--sakura-pink);
+    margin-bottom: 14px;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.section-header::after {
+    content: '';
+    display: block;
+    margin-top: 6px;
+    width: 54px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--sakura-pink);
+    box-shadow: 0 0 8px var(--sakura-pink), 0 0 16px var(--sakura-pink);
+    opacity: 0.8;
+    animation: underline-glow 1.2s ease-in-out;
+}
+
+@keyframes underline-glow {
+    0% { width: 0; opacity: 0; }
+    60% { width: 54px; opacity: 1; }
+    100% { width: 54px; opacity: 0.8; }
+}
+
+/* --- Contact Info --- */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-icon {
+    color: var(--sakura-pink);
+    font-size: 1.1em;
+    margin-right: 8px;
+}
+
+.contact-list a {
+    color: var(--lavender-light);
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.contact-list a:hover {
+    color: var(--golden-yellow);
+    text-shadow: 0 0 8px var(--sakura-pink);
+}
+
+/* --- Languages & Certifications --- */
+.lang-list, .cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lang-list li, .cert-list li {
+    padding-left: 2px;
+}
+
+/* --- Career Objective --- */
+.career-block {
+    margin-bottom: 10px;
+}
+
+.career-text {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--lavender-light);
+    margin: 0;
+}
+
+.highlight-gold {
+    color: var(--golden-yellow);
+    font-weight: 700;
+    background: rgba(251,191,36,0.12);
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-right: 8px;
+    font-size: 1.02em;
+    letter-spacing: 0.5px;
+}
+
+/* --- Skills --- */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+}
+
+.skills-list li {
+    background: rgba(236,72,153,0.08);
+    color: var(--lavender);
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 0 8px 0 rgba(236,72,153,0.06);
+    transition: box-shadow 0.2s, color 0.2s;
+}
+
+.skills-list li:hover {
+    box-shadow: 0 0 18px var(--sakura-pink);
+    color: var(--golden-yellow);
+}
+
+/* --- Work Experience --- */
+.exp-block .job {
+    margin-bottom: 22px;
+}
+
+.job-title {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--sakura-pink);
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.job-org {
+    color: var(--golden-yellow);
+    font-weight: 600;
+    font-size: 0.98em;
+    margin-left: 6px;
+}
+
+.job-date {
+    font-size: 0.98rem;
+    color: var(--lavender);
+    background: rgba(251,191,36,0.10);
+    padding: 2px 10px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.job-desc {
+    list-style: disc inside;
+    margin: 8px 0 0 0;
+    padding-left: 16px;
+    color: var(--lavender-light);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- Education --- */
+.edu-list {
+    list-style: disc inside;
+    margin: 0;
+    padding-left: 16px;
+    color: var(--lavender-light);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .resume-container {
+        flex-direction: column;
+        max-width: 98vw;
+    }
+    .resume-left, .resume-right {
+        width: 100%;
+        padding: 28px 16px;
+    }
+    .resume-right {
+        padding-top: 0;
+    }
+    .download-btn {
+        top: 12px;
+        left: 12px;
+        padding: 10px 18px 10px 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .resume-name { font-size: 1.3rem; }
+    .resume-title { font-size: 1rem; }
+    .section-header { font-size: 1rem; }
+    .career-text, .skills-list li, .job-title, .job-date, .job-desc, .edu-list li, .lang-list li, .cert-list li { font-size: 0.95rem; }
+    .resume-container { margin: 12px auto; }
+}
+
+/* --- End Royal Sakura Resume Styles --- */
