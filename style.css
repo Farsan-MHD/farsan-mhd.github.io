@@ -1229,6 +1229,13 @@ nav a:hover {
     .footer-copyright { font-size: 0.85rem; margin-top: 18px; }
 }
 
+/* Remove background color from footer-links on mobile/small screens */
+@media (max-width: 900px) {
+  .footer-links {
+    background: none !important;
+  }
+}
+
 /* Skill card animation */
 .skill-card.animate-skill {
   opacity: 0;
