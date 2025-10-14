@@ -199,21 +199,25 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Remove any border styles */
+    border-bottom: 2px solid #EC4899;
+    box-shadow: none;
 }
 
 .about-photo {
     width: 320px;
     height: auto;
     border-radius: 32px;
-    border: 6px solid #EC4899;
-    box-shadow: 0 0 32px 0 rgba(236,72,153,0.25), 0 8px 32px rgba(30,27,75,0.25);
-    background: transparent;
-    object-fit: cover;
-    transition: box-shadow 0.4s;
+    /* Remove border and glow-hover effect */
+    border: none;
+    box-shadow: none;
+    transition: none;
 }
 
-.about-photo:hover {
-    box-shadow: 0 0 48px 8px #EC4899, 0 8px 32px rgba(30,27,75,0.25);
+.about-photo.glow-hover:hover {
+    /* Remove hover effect */
+    box-shadow: none;
+    filter: none;
 }
 
 .about-content {
@@ -415,6 +419,13 @@ nav a:hover {
         min-width: 100px;
         padding: 10px 12px;
     }
+}
+
+/* Hide about photo on mobile devices */
+@media (max-width: 768px) {
+  .about-photo-wrap {
+    display: none !important;
+  }
 }
 
 /* Fade-in on scroll JS helper class */
@@ -1216,6 +1227,18 @@ nav a:hover {
     .footer-link { font-size: 0.95rem; }
     .footer-social-link { font-size: 1.1rem; }
     .footer-copyright { font-size: 0.85rem; margin-top: 18px; }
+}
+
+/* Skill card animation */
+.skill-card.animate-skill {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.skill-card.animate-skill.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --- End Royal Sakura Footer Styles --- */

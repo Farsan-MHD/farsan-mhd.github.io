@@ -19,7 +19,7 @@ body.resume-bg {
 .download-btn {
     position: fixed;
     top: 24px;
-    left: 24px;
+    right: 24px;
     z-index: 100;
     background: var(--sakura-pink);
     color: var(--white);
