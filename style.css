@@ -1216,6 +1216,9 @@ nav a:hover {
         text-align: center;
         margin-bottom: 10px;
     }
+    #photi-bg-whait{
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1248,4 +1251,35 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* --- End Royal Sakura Footer Styles --- */
+/* Add to your style.css */
+
+/* Make #photi-bg-whait cover parent section, with left-side white radial "smoke" effect */
+#photi-bg-whait {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  /* Radial gradient: left side white "smoke", right side transparent */
+  background: radial-gradient(circle at 8% 15%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.45) 25%, rgba(255,255,255,0.08) 45%, transparent 100%);
+}
+
+/* Ensure parent section and container are positioned for absolute child */
+.royal-sakura-about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-photo-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  /* The background will not cover this content */
+}
+

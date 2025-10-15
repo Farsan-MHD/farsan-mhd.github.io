@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style sheets/certificate.css">
+</head>
+<body>
+    <!-- Exit Button (top-left) -->
+    <a href="index.html" class="exit-btn" style="position:fixed;top:20px;left:20px;z-index:1000;background:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:bold;">
+        &#10005; Exit
+    </a>
+    <section id="certificates" class="certificates-section">
+      <div class="certificates-container">
+        <h2 class="cert-title">My Certificates</h2>
+        <div class="cert-grid">
+          <!-- Certificate 1 -->
+          <div class="certificate-card">
+              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Advanced Excel Certificate" class="certificate-img">
+            <div class="certificate-info">
+              <h3 class="certificate-name">Computer Technology& & Data Entry</h3>
+              <p class="certificate-meta">Issued by IDHS – 2025</p>
+            </div>
+          </div>
+          <!-- Certificate 2 -->
+          <div class="certificate-card">
+              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Web Design Certificate" class="certificate-img">
+            <div class="certificate-info">
+              <h3 class="certificate-name">Web Devalopment</h3>
+              <p class="certificate-meta">Issued by Coursera – 2024</p>
+            </div>
+          </div>
+          <!-- Certificate 3 -->
+          <div class="certificate-card">
+              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Data Entry Certificate" class="certificate-img">
+            <div class="certificate-info">
+              <h3 class="certificate-name">Excel Advanced</h3>
+              <p class="certificate-meta">Issued by IDHS – 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        window.addEventListener('load', function() {
+        var loader = document.getElementById('pageloaded-animation');
+        if(loader) loader.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
