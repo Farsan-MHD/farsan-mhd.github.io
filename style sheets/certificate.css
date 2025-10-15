@@ -47,6 +47,15 @@
   display: block;
 }
 
+.certificate-img.enlargeable {
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.certificate-img.enlargeable:hover {
+  box-shadow: 0 0 0 4px #EC489933;
+}
+
 .certificate-info {
   padding: 18px 12px 12px 12px;
   text-align: center;
@@ -62,6 +71,45 @@
 .certificate-meta {
   font-size: 0.95rem;
   color: #6B7280;
+}
+
+/* Modal Styles */
+#cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(30,27,75,0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+#cert-modal.active {
+  display: flex;
+}
+
+#cert-modal-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(30,27,75,0.25);
+  background: #fff;
+}
+
+#cert-modal-close {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  background: #fff;
+  color: #333;
+  font-size: 2rem;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 3100;
 }
 
 /* Responsive */

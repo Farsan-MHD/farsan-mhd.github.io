@@ -17,7 +17,7 @@
         <div class="cert-grid">
           <!-- Certificate 1 -->
           <div class="certificate-card">
-              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Web Design Certificate" class="certificate-img">
+              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Web Design Certificate" class="certificate-img enlargeable">
             <div class="certificate-info">
               <h3 class="certificate-name">Web Devalopment</h3>
               <p class="certificate-meta">Issued by Coursera – 2024</p>
@@ -25,7 +25,7 @@
           </div>
           <!-- Certificate 2 -->
           <div class="certificate-card">
-              <img src="images/certificates/computer tecnology & data entry.webp" alt="Advanced Excel Certificate" class="certificate-img">
+              <img src="images/certificates/computer tecnology & data entry.webp" alt="Advanced Excel Certificate" class="certificate-img enlargeable">
             <div class="certificate-info">
               <h3 class="certificate-name">Computer Technology& & Data Entry</h3>
               <p class="certificate-meta">Issued by IDHS – 2025</p>
@@ -33,7 +33,7 @@
           </div>
           <!-- Certificate 3 -->
           <div class="certificate-card">
-              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Data Entry Certificate" class="certificate-img">
+              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Data Entry Certificate" class="certificate-img enlargeable">
             <div class="certificate-info">
               <h3 class="certificate-name">Excel Advanced</h3>
               <p class="certificate-meta">Issued by IDHS – 2025</p>
@@ -42,11 +42,32 @@
         </div>
       </div>
     </section>
+    <!-- Modal for enlarged image -->
+    <div id="cert-modal">
+      <button id="cert-modal-close">&#10005;</button>
+      <img id="cert-modal-img" src="" alt="Certificate Large View">
+    </div>
     <script>
         window.addEventListener('load', function() {
         var loader = document.getElementById('pageloaded-animation');
         if(loader) loader.style.display = 'none';
         });
+        // Certificate Modal Functionality
+        document.querySelectorAll('.certificate-img.enlargeable').forEach(function(img) {
+          img.style.cursor = "pointer";
+          img.addEventListener('click', function() {
+            var modal = document.getElementById('cert-modal');
+            var modalImg = document.getElementById('cert-modal-img');
+            modalImg.src = img.src;
+            modal.classList.add('active');
+          });
+        });
+        document.getElementById('cert-modal-close').onclick = function() {
+          document.getElementById('cert-modal').classList.remove('active');
+        };
+        document.getElementById('cert-modal').onclick = function(e) {
+          if(e.target === this) this.classList.remove('active');
+        };
     </script>
 </body>
 </html>
