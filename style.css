@@ -829,13 +829,13 @@ nav a:hover {
 
 @media (max-width: 600px) {
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
         padding: 0 2px;
     }
     .skill-card {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         font-size: 0.85rem;
     }
     .skills-title {
