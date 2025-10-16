@@ -1,73 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style sheets/certificate.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates</title>
+  <link rel="stylesheet" href="/style sheets/certificate.css" />
+  <style>
+    /* Minimal loader styles (ensures loader works even if CSS file missing) */
+    #pageloaded-animation {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      z-index: 4000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1.35s ease, visibility 1s;
+    }
+    #pageloaded-animation.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    html.pg-loading, body.pg-loading { overflow: hidden; }
+    .loader-dots { display:flex; gap:10px; }
+    .loader-dots span {
+      width:14px; height:14px; border-radius:50%; background:#EC4899;
+      animation: loader-bounce .9s infinite alternate ease-in-out;
+    }
+    .loader-dots span:nth-child(2){ animation-delay:.12s; }
+    .loader-dots span:nth-child(3){ animation-delay:.24s; }
+    .loader-dots span:nth-child(4){ animation-delay:.36s; }
+    @keyframes loader-bounce { to { transform: translateY(-16px); opacity:.65 } }
+  </style>
 </head>
 <body>
-    <!-- Exit Button (top-left) -->
-    <a href="index.html" class="exit-btn" style="position:fixed;top:20px;left:20px;z-index:1000;background:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:bold;">
-        &#10005; Exit
-    </a>
-    <section id="certificates" class="certificates-section">
-      <div class="certificates-container">
-        <h2 class="cert-title">My Certificates</h2>
-        <div class="cert-grid">
-          <!-- Certificate 1 -->
-          <div class="certificate-card">
-              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Web Design Certificate" class="certificate-img enlargeable">
-            <div class="certificate-info">
-              <h3 class="certificate-name">Web Devalopment</h3>
-              <p class="certificate-meta">Issued by Coursera – 2024</p>
-            </div>
+  <!-- Page loader -->
+  <section id="pageloaded-animation">
+    <div class="loader-dots"><span></span><span></span><span></span><span></span></div>
+  </section>
+
+  <!-- Exit Button (top-left) -->
+  <a href="index.html" class="exit-btn" style="position:fixed;top:20px;left:20px;z-index:1000;background:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:bold;">
+    &#10005; Exit
+  </a>
+
+  <section id="certificates" class="certificates-section">
+    <div class="certificates-container">
+      <h2 class="cert-title">My Certificates</h2>
+
+      <div class="cert-grid">
+        <!-- Certificate 1 -->
+        <div class="certificate-card">
+          <img src="images/certificates/webdevalopment certifiacte.webp" alt="Web Development" class="certificate-img enlargeable">
+          <div class="certificate-info">
+            <h3 class="certificate-name">Web Development</h3>
+            <p class="certificate-meta">Issued by Coursera – 2024</p>
           </div>
-          <!-- Certificate 2 -->
-          <div class="certificate-card">
-              <img src="images/certificates/computer tecnology & data entry.webp" alt="Advanced Excel Certificate" class="certificate-img enlargeable">
-            <div class="certificate-info">
-              <h3 class="certificate-name">Computer Technology& & Data Entry</h3>
-              <p class="certificate-meta">Issued by IDHS – 2025</p>
-            </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="certificate-card">
+          <img src="images/certificates/computer tecnology & data entry.webp" alt="Computer Technology & Data Entry" class="certificate-img enlargeable">
+          <div class="certificate-info">
+            <h3 class="certificate-name">Computer Technology & Data Entry</h3>
+            <p class="certificate-meta">Issued by IDHS – 2025</p>
           </div>
-          <!-- Certificate 3 -->
-          <div class="certificate-card">
-              <img src="images/certificates/webdevalopment certifiacte.webp" alt="Data Entry Certificate" class="certificate-img enlargeable">
-            <div class="certificate-info">
-              <h3 class="certificate-name">Excel Advanced</h3>
-              <p class="certificate-meta">Issued by IDHS – 2025</p>
-            </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="certificate-card">
+          <img src="images/certificates/webdevalopment certifiacte.webp" alt="Excel Advanced" class="certificate-img enlargeable">
+          <div class="certificate-info">
+            <h3 class="certificate-name">Excel Advanced</h3>
+            <p class="certificate-meta">Issued by IDHS – 2025</p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Modal for enlarged image -->
-    <div id="cert-modal">
-      <button id="cert-modal-close">&#10005;</button>
-      <img id="cert-modal-img" src="" alt="Certificate Large View">
     </div>
-    <script>
-        window.addEventListener('load', function() {
-        var loader = document.getElementById('pageloaded-animation');
-        if(loader) loader.style.display = 'none';
+  </section>
+
+  <!-- Modal for enlarged image -->
+  <div id="cert-modal" aria-hidden="true">
+    <button id="cert-modal-close" aria-label="Close certificate">&#10005;</button>
+    <img id="cert-modal-img" src="" alt="Certificate Large View">
+  </div>
+
+  <script>
+    // show loader until page fully loaded
+    document.documentElement.classList.add('pg-loading');
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('pageloaded-animation');
+      if (!loader) return;
+      loader.classList.add('hidden');
+      document.documentElement.classList.remove('pg-loading');
+      document.body.classList.remove('pg-loading');
+      // remove from flow after fade
+      setTimeout(function(){ if(loader) loader.style.display='none'; }, 380);
+    });
+
+    // Modal functionality: attach after DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('cert-modal');
+      var modalImg = document.getElementById('cert-modal-img');
+      var closeBtn = document.getElementById('cert-modal-close');
+
+      function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Certificate';
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden','false');
+      }
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden','true');
+        modalImg.src = '';
+      }
+
+      // ensure cursor pointer and click handler
+      document.querySelectorAll('.certificate-img.enlargeable').forEach(function(img){
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function(){
+          openModal(img.src, img.alt);
         });
-        // Certificate Modal Functionality
-        document.querySelectorAll('.certificate-img.enlargeable').forEach(function(img) {
-          img.style.cursor = "pointer";
-          img.addEventListener('click', function() {
-            var modal = document.getElementById('cert-modal');
-            var modalImg = document.getElementById('cert-modal-img');
-            modalImg.src = img.src;
-            modal.classList.add('active');
-          });
-        });
-        document.getElementById('cert-modal-close').onclick = function() {
-          document.getElementById('cert-modal').classList.remove('active');
-        };
-        document.getElementById('cert-modal').onclick = function(e) {
-          if(e.target === this) this.classList.remove('active');
-        };
-    </script>
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      // close when clicking outside image
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) closeModal();
+      });
+      // close on ESC
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+  </script>
 </body>
 </html>
