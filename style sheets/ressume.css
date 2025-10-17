@@ -51,7 +51,7 @@ section {
 }
 
 section h2 {
-    border-bottom: 2px solid #ff90c1;
+    border-bottom: 2px solid #0b0b0b;
     padding-bottom: 5px;
     color: #ff90c1;
 }
@@ -88,4 +88,106 @@ ul {
 @keyframes glow {
     0% { box-shadow: 0 0 10px #ff90c1; }
     100% { box-shadow: 0 0 25px #ff90c1; }
+}
+
+/* Resume page theme — requested colors and no shadows */
+
+/* Page background and base typography */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: rgb(247, 245, 245); /* page background */
+  color: rgb(110, 108, 108);      /* normal text color */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 50px;
+}
+
+/* Main resume container */
+.resume-container {
+  max-width: 1100px;
+  margin: 56px auto;
+  padding: 36px;
+  background: rgb(228, 225, 225); /* container background */
+  border-radius: 12px;
+  /* black drop shadow (stronger) */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6) !important;
+  color: inherit;
+  
+}
+
+/* Headers: black and bold */
+.resume-container header h1,
+.resume-container h2,
+.resume-container h3 {
+  color: #000000;      /* header text black */
+  font-weight: 700;    /* bold */
+  margin: 0 0 12px 0;
+}
+
+/* Normal paragraph and list text */
+.resume-container p,
+.resume-container li,
+.resume-container span,
+.resume-container a {
+  color: rgb(92, 90, 90); /* normal text color */
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* Links: use black for emphasis but keep normal text color elsewhere */
+.resume-container a {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Buttons (exit / download) override to remove pink & shadows */
+.exit-btn,
+.download-btn {
+  box-shadow: none !important;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+/* Exit button (keep white background, black text) */
+.exit-btn {
+  background: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* Download button (accent changed to black) */
+.download-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Remove any pink accent classes — force accent to black where used */
+.accent-gradient,
+.logo-heighlight,
+.header-accent {
+  color: #000000 !important;
+  background: none !important;
+}
+
+/* Utility: ensure headings inside sections also follow black/bold rule */
+section h2, section h3 {
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .resume-container {
+    margin: 20px;
+    padding: 20px;
+  }
 }

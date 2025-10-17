@@ -5,14 +5,17 @@
 }
 
 /*  for the color classes  */
-.bg-primary { background: #1E1B4B; }
-.text-primary { color: #E9D5FF; } 
-.header-text { color: #FDF4FF; }  
+.bg-primary { background: #f0efef; }
+.text-primary { color: rgb(73, 73, 73); } 
+.header-text { color: #080808; }  
 .assent-button { background: #EC4899;}
 .logo-heighlight { color: #FBBF24; }
 .section-padding { padding: 60px auto; }
 .section-margin { margin: 60px auto; }
 
+body{
+    background: var(bg-primary, #f0efef);
+}
 
 /*  page loading animation  */
 #pageloaded-animation {
@@ -45,7 +48,7 @@
     display: block;
     width: 16px;
     height: 16px;
-    background: #3498db;
+    background: #000000;
     border-radius: 50%;
     animation: bounce 0.8s infinite alternate;
 }
@@ -74,7 +77,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 15px 15px;
-    background: #2A255C;
+    background: #dadadf;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     position: fixed;
     top: 0; left: 0;
@@ -94,12 +97,13 @@ nav {
 nav a {
     text-decoration: none;
     color: #333;
+    font-weight: bold;
     font-size: 1rem;
     transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #FBBF24;
+    color: #080808;
 }
 
 #menu-toggle {
@@ -136,17 +140,17 @@ nav a:hover {
 /*  for the welcome banner style  */
 #welcome-banner {
     width: 100%;
-    height: 350px;
+    height: calc(100vh - 70px);
     display: flex;
-    background: url('../images/welcome-banner.webp') no-repeat center center/cover;
+    /* Position image on right, cover at least 60% from top */
+    background: url('../images/welcome-image.webp') no-repeat right top;
+    background-size: 50% auto;
     box-shadow: 0 8px 32px rgb(30,27,75);
     margin-top: 70px;
 }
 
 .welcome-text {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    
     padding-left: 42px;
     display: flex;
     flex-direction: column;
@@ -155,21 +159,20 @@ nav a:hover {
 
 .welcome-text h1 {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 800;
     letter-spacing: 2px;
     margin-bottom: 18px;
-    color: #FBBF24;
+    color: var(--header-text, #080808);
 }
 
 .welcome-text p {
     font-size: 1.5rem;
-    color: #E9D5FF;
+    color: var(--text-primary);
     margin-bottom: 10px;
 }
 
 /* Royal Sakura About Section */
 .royal-sakura-about {
-    background: #1E1B4B;
     padding: 80px 0 60px 0;
     width: 100%;
     display: flex;
@@ -200,9 +203,6 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Remove any border styles */
-    border-bottom: 5px solid #EC4899;
-    box-shadow: none;
 }
 
 .about-photo {
@@ -223,7 +223,6 @@ nav a:hover {
 
 .about-content {
     flex: 1;
-    color: #E9D5FF;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -238,26 +237,16 @@ nav a:hover {
     font-weight: bold;
     margin-bottom: 10px;
     letter-spacing: 2px;
-    background: linear-gradient(90deg, #EC4899 40%, #FBBF24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.accent-gradient {
-    background: linear-gradient(90deg, #EC4899 60%, #FBBF24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: bold;
+    color: var(--header-text);
 }
 
 .highlight-quote {
-    color: #FDF4FF;
+    color: rgb(73, 73, 73);;
     font-size: 1.15rem;
     font-style: italic;
-    background: rgba(236,72,153,0.12);
-    border-left: 4px solid #EC4899;
+    font-weight: 800;
+    background: rgba(90, 86, 88, 0.12);
+    border-left: 4px solid #0b0b0b;
     padding: 8px 16px;
     border-radius: 0 18px 18px 0;
     margin-bottom: 18px;
@@ -267,72 +256,15 @@ nav a:hover {
 .about-intro {
     font-size: 1.15rem;
     margin-bottom: 18px;
-    color: #E9D5FF;
+    color: rgb(73, 73, 73);;
     line-height: 1.7;
 }
 
 .about-vision {
     font-size: 1.08rem;
     margin-bottom: 32px;
-    color: #FDF4FF;
+    color: rgb(73, 73, 73);
     line-height: 1.6;
-}
-
-.highlight-yellow {
-    color: #FBBF24;
-    font-weight: bold;
-}
-
-.about-stats {
-    display: flex;
-    gap: 32px;
-    margin-top: 18px;
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; /* Center the stats and button */
-    text-align: center;      /* Center the text inside each stat */
-}
-
-.stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;     /* Center content in each stat */
-    background: rgba(236,72,153,0.09);
-    border-radius: 16px;
-    padding: 14px 22px;
-    min-width: 140px;
-    box-shadow: 0 2px 12px rgba(236,72,153,0.08);
-    transition: box-shadow 0.3s;
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: #EC4899;
-    transition: text-shadow 0.3s, color 0.3s;
-}
-
-.stat-label {
-    font-size: 1rem;
-    color: #E9D5FF;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
-}
-
-.stat:hover .stat-number {
-    color: #FBBF24;
-    text-shadow: 0 0 12px #FBBF24, 0 0 4px #EC4899;
-}
-
-.about-stats .about-btn {
-    margin-left: 0;
-    margin-top: 0;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 @keyframes fadeInUp {
@@ -413,13 +345,6 @@ nav a:hover {
     .about-intro, .about-vision {
         font-size: 1rem;
     }
-    .about-stats {
-        gap: 12px;
-    }
-    .stat {
-        min-width: 100px;
-        padding: 10px 12px;
-    }
 }
 
 /* Hide about photo on mobile devices */
@@ -441,40 +366,34 @@ nav a:hover {
 }
 
 .resume-nav-btn-wrap {
-    position: absolute;
-    top: 80px; /* adjust as needed to sit below navbar */
-    right: 32px;
-    z-index: 50;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 100;
 }
 
 .resume-nav-btn {
-    background: #EC4899;
-    color: #fff;
-    font-family: inherit;
-    font-size: 1.08rem;
-    font-weight: 600;
-    padding: 12px 28px;
-    border-radius: 32px;
-    box-shadow: 0 0 12px 0 rgba(236,72,153,0.18);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgb(217, 214, 214);
+    color: rgb(110, 108, 108);
     text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: box-shadow 0.2s, background 0.2s, color 0.2s;
-    border: none;
-    outline: none;
-    display: inline-block;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
 }
 
-.resume-nav-btn:hover,
-.resume-nav-btn:focus {
-    box-shadow: 0 0 24px #FBBF24, 0 0 8px #EC4899;
-    background: #EC4899;
-    color: #FBBF24;
+.resume-nav-btn:hover {
+    transform: translateY(-2px);
+    color: #000000;
 }
 
 /* --- Projects Section Layout --- */
 .royal-sakura-projects {
     width: 100%;
-    background: var(--royal-indigo, #1E1B4B);
     padding: 80px 0 80px 0;
     box-sizing: border-box;
 }
@@ -489,7 +408,7 @@ nav a:hover {
 .projects-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--sakura-pink, #EC4899);
+    color: var(--header-text);
     letter-spacing: 1px;
     margin-bottom: 0;
     position: relative;
@@ -500,8 +419,7 @@ nav a:hover {
     height: 5px;
     margin: 18px auto 0 auto;
     border-radius: 3px;
-    background: var(--sakura-pink, #EC4899);
-    box-shadow: 0 0 16px var(--sakura-pink, #EC4899), 0 0 32px var(--sakura-pink, #EC4899);
+    background: var(--header-text, #080808);
     opacity: 0.8;
     animation: underline-glow 1.2s ease-in-out;
 }
@@ -514,7 +432,7 @@ nav a:hover {
 
 .projects-subtitle {
     font-size: 1.25rem;
-    color: var(--lavender, #E9D5FF);
+    color: var(--text-primary, rgb(73, 73, 73));
     margin-top: 18px;
     margin-bottom: 0;
     opacity: 0.95;
@@ -531,9 +449,9 @@ nav a:hover {
 }
 
 .project-card {
-    background: rgba(30,27,75,0.92);
+    background: rgba(239, 237, 237, 0.92);
     border-radius: 24px;
-    box-shadow: 0 4px 32px 0 rgba(236,72,153,0.08);
+    box-shadow: 0 4px 26px 0 var(--header-text, #757474), 0 0 14px var(--header-text, #807f7f);
     padding: 32px 24px 28px 24px;
     display: flex;
     flex-direction: column;
@@ -558,7 +476,6 @@ nav a:hover {
 
 .project-card:hover {
     transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 8px 36px 0 var(--sakura-pink, #EC4899), 0 0 24px var(--golden-yellow, #FBBF24);
     z-index: 2;
 }
 
@@ -590,7 +507,7 @@ nav a:hover {
 .project-name {
     font-size: 1.35rem;
     font-weight: 700;
-    color: var(--lavender, #E9D5FF);
+    color: var(--header-text, #080808);
     margin-bottom: 12px;
     margin-top: 0;
     letter-spacing: 0.5px;
@@ -599,13 +516,12 @@ nav a:hover {
 }
 
 .project-card:hover .project-name {
-    color: var(--sakura-pink, #EC4899);
-    text-shadow: 0 0 12px var(--sakura-pink, #EC4899);
+    color: #434245;
 }
 
 .project-desc {
     font-size: 1.05rem;
-    color: var(--lavender, #E9D5FF);
+    color: var(--text-primary, rgb(73, 73, 73));
     text-align: center;
     margin-bottom: 22px;
     line-height: 1.6;
@@ -692,7 +608,6 @@ nav a:hover {
 
 .royal-sakura-skills {
     width: 100%;
-    background: var(--royal-indigo, #1E1B4B);
     padding: 80px 0 80px 0;
     box-sizing: border-box;
 }
@@ -707,19 +622,18 @@ nav a:hover {
 .skills-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: var(--sakura-pink, #EC4899);
+    color: var(--header-text, #080808);
     letter-spacing: 1px;
     margin-bottom: 0;
     position: relative;
 }
 
 .skills-underline {
-    width: 80px;
-    height: 4px;
-    margin: 16px auto 0 auto;
-    border-radius: 2px;
-    background: var(--sakura-pink, #EC4899);
-    box-shadow: 0 0 12px var(--sakura-pink, #EC4899), 0 0 24px var(--sakura-pink, #EC4899);
+   width: 90px;
+    height: 5px;
+    margin: 18px auto 0 auto;
+    border-radius: 3px;
+    background: var(--header-text, #080808);
     opacity: 0.8;
     animation: underline-glow 1.2s ease-in-out;
 }
@@ -732,7 +646,7 @@ nav a:hover {
 
 .skills-subtitle {
     font-size: 1.15rem;
-    color: var(--lavender, #E9D5FF);
+    color: var(--text-primary, rgb(73, 73, 73));
     margin-top: 14px;
     margin-bottom: 0;
     opacity: 0.95;
@@ -752,9 +666,9 @@ nav a:hover {
 .skill-card {
     width: 150px;
     height: 150px;
-    background: linear-gradient(135deg, rgba(236,72,153,0.18) 0%, rgba(30,27,75,0.92) 100%);
+    background: rgba(239, 237, 237, 0.92);
+    box-shadow: 0 2px 16px 0 var(--header-text, #757474), 0 0 4px var(--header-text, #807f7f);
     border-radius: 24px;
-    box-shadow: 0 4px 24px 0 rgba(236,72,153,0.10);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -778,7 +692,7 @@ nav a:hover {
 .skill-card:hover,
 .skill-card:focus {
     transform: scale(1.08) translateY(-8px);
-    box-shadow: 0 0 32px #EC4899, 0 0 18px #FBBF24;
+    box-shadow: 0 4px 26px 0 var(--header-text, #757474), 0 0 14px var(--header-text, #807f7f);
     outline: none;
 }
 
@@ -796,7 +710,7 @@ nav a:hover {
 
 .skill-name {
     font-size: 1.08rem;
-    color: var(--lavender, #E9D5FF);
+    color: var(--header-text, #080808);
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.5px;
@@ -804,8 +718,7 @@ nav a:hover {
 }
 
 .skill-card:hover .skill-name {
-    color: var(--sakura-pink, #EC4899);
-    text-shadow: 0 0 8px #EC4899;
+    text-shadow: 0 0 8px #a2a0a1;
 }
 
 /* --- Responsive --- */
@@ -852,7 +765,6 @@ nav a:hover {
 
 .royal-sakura-contact {
     width: 100%;
-    background: linear-gradient(120deg, #EC4899 0%, #1E1B4B 100%);
     padding: 80px 0 80px 0;
     box-sizing: border-box;
 }
@@ -865,10 +777,9 @@ nav a:hover {
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    background: rgba(30,27,75,0.85);
+    background: rgba(239, 237, 237, 0.92);
+    box-shadow: 0 2px 16px 0 var(--header-text, #757474), 0 0 4px var(--header-text, #807f7f);
     border-radius: 32px;
-    box-shadow: 0 8px 40px 0 rgba(236,72,153,0.10);
-    backdrop-filter: blur(8px);
     padding: 48px 32px;
 }
 
@@ -881,7 +792,7 @@ nav a:hover {
 .contact-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #EC4899;
+    color: var(--header-text, #080808);
     letter-spacing: 1px;
     margin-bottom: 0;
     text-align: left;
@@ -892,15 +803,14 @@ nav a:hover {
     height: 4px;
     margin: 16px 0 0 0;
     border-radius: 2px;
-    background: #EC4899;
-    box-shadow: 0 0 12px #EC4899, 0 0 24px #EC4899;
+    background: var(--header-text, #080808);
     opacity: 0.8;
     animation: underline-glow 1.2s ease-in-out;
 }
 
 .contact-subtitle {
     font-size: 1.15rem;
-    color: #E9D5FF;
+    color: var(--text-primary, rgb(73, 73, 73));
     margin-top: 18px;
     margin-bottom: 24px;
     opacity: 0.95;
@@ -918,14 +828,14 @@ nav a:hover {
     align-items: center;
     gap: 12px;
     font-size: 1.08rem;
-    color: #E9D5FF;
-    background: rgba(236,72,153,0.08);
+    color: var(--text-primary, rgb(73, 73, 73));
+    background: rgb(217, 214, 214);
     padding: 10px 22px;
     border-radius: 18px;
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
-    box-shadow: 0 0 8px 0 rgba(236,72,153,0.10);
+    box-shadow: 0 0 8px 0 rgba(17, 17, 17, 0.1), 0 0 4px 0 rgba(15, 14, 14, 0.05);
 }
 
 .social-link .social-icon {
@@ -936,42 +846,38 @@ nav a:hover {
 .social-link.facebook:hover,
 .social-link.facebook:focus {
     color: #fff;
-    background: linear-gradient(90deg, #EC4899 60%, #FBBF24 100%);
     transform: scale(1.08);
-    box-shadow: 0 0 18px #EC4899;
+    box-shadow: 0 0 18px #4d4d4d;
 }
 
 .social-link.twitter:hover,
 .social-link.twitter:focus {
     color: #fff;
-    background: linear-gradient(90deg, #EC4899 60%, #FBBF24 100%);
     transform: scale(1.08);
-    box-shadow: 0 0 18px #FBBF24;
+    box-shadow: 0 0 18px #4d4d4d;
 }
 
 .social-link.linkedin:hover,
 .social-link.linkedin:focus {
     color: #fff;
-    background: linear-gradient(90deg, #EC4899 60%, #FBBF24 100%);
     transform: scale(1.08);
-    box-shadow: 0 0 18px #EC4899;
+    box-shadow: 0 0 18px #4d4d4d;
 }
 
 .social-link.gmail:hover,
 .social-link.gmail:focus {
     color: #fff;
-    background: linear-gradient(90deg, #EC4899 60%, #FBBF24 100%);
     transform: scale(1.08);
-    box-shadow: 0 0 18px #FBBF24;
+    box-shadow: 0 0 18px #4d4d4d;
 }
 
 /* --- Contact Form --- */
 .contact-form {
     flex: 1 1 380px;
     min-width: 260px;
-    background: rgba(236,72,153,0.10);
+    background: rgba(141, 139, 140, 0.1);
     border-radius: 24px;
-    box-shadow: 0 4px 24px 0 rgba(236,72,153,0.10);
+    box-shadow: 0 8px 24px 0 rgb(26, 24, 24);
     padding: 32px 24px;
     display: flex;
     flex-direction: column;
@@ -982,7 +888,7 @@ nav a:hover {
 
 .contact-form:hover,
 .contact-form:focus-within {
-    box-shadow: 0 0 32px #EC4899, 0 0 18px #FBBF24;
+    box-shadow: 0 0 32px #323232, 0 0 18px #454543;
     transform: translateY(-4px) scale(1.01);
 }
 
@@ -997,11 +903,11 @@ nav a:hover {
     padding: 16px 12px 8px 12px;
     font-size: 1.08rem;
     color: #E9D5FF;
-    background: rgba(30,27,75,0.85);
+    background: rgb(217, 214, 214);
     border: none;
     border-radius: 12px;
     outline: none;
-    box-shadow: 0 0 8px 0 rgba(236,72,153,0.08);
+    box-shadow: 0 8 15px 0 rgba(23, 22, 23, 0.08);
     font-family: inherit;
     transition: background 0.3s, box-shadow 0.3s;
     resize: none;
@@ -1009,8 +915,7 @@ nav a:hover {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    background: rgba(236,72,153,0.18);
-    box-shadow: 0 0 18px #EC4899;
+    box-shadow: 0 0 18px #464545;
 }
 
 .contact-form label {
@@ -1033,44 +938,37 @@ nav a:hover {
     left: 8px;
     font-size: 0.92rem;
     color: #FBBF24;
-    background: rgba(30,27,75,0.85);
+    background: rgb(164, 164, 165);
     padding: 0 6px;
     border-radius: 6px;
 }
 
-.contact-btn {
-    margin-top: 12px;
-    width: 100%;
-    font-size: 1.13rem;
-    font-weight: 700;
-    padding: 14px 0;
-    border-radius: 24px;
-    background: linear-gradient(90deg, #EC4899 60%, #FBBF24 100%);
-    color: #fff;
-    box-shadow: 0 0 8px 0 rgba(236,72,153,0.18);
+#submit-btn{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgb(217, 214, 214);
+    color: rgb(110, 108, 108);
+    text-decoration: none;
     border: none;
-    outline: none;
-    cursor: pointer;
-    transition: background 0.4s, color 0.3s, box-shadow 0.3s, transform 0.3s;
-    letter-spacing: 0.5px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgb(0,0,0);
+    transition: transform 0.2s ease;
 }
 
-.contact-btn:hover,
-.contact-btn:focus {
-    background: linear-gradient(90deg, #FBBF24 60%, #EC4899 100%);
-    color: #1E1B4B;
-    box-shadow: 0 0 18px #FBBF24, 0 0 8px #EC4899;
-    transform: scale(1.04);
-    outline: none;
+#submit-btn:hover {
+    transform: translateY(-2px);
+    color: #000000;
 }
-
 /* Royal Sakura Footer Styles */
 /* filepath: d:\Projects\sample web site for me\style.css */
 
 .royal-sakura-footer {
     position: relative;
     width: 100%;
-    background: linear-gradient(120deg, #EC4899 0%, #1E1B4B 100%);
+    background: #9f9da1;
     padding: 48px 0 18px 0;
     box-sizing: border-box;
     overflow: hidden;
@@ -1128,14 +1026,13 @@ nav a:hover {
     font-size: 1.7rem;
     font-weight: 700;
     color: #b01060;
-    text-shadow: 0 0 16px #EC4899, 0 0 32px #FBBF24;
     margin-bottom: 6px;
     letter-spacing: 1px;
 }
 
 .footer-tagline {
     font-size: 1.08rem;
-    color: #E9D5FF;
+    color: rgb(73, 73, 73);
     opacity: 0.92;
     margin-bottom: 0;
 }
@@ -1151,7 +1048,7 @@ nav a:hover {
 }
 
 .footer-link {
-    color: #E9D5FF;
+    color: rgb(73, 73, 73);
     font-size: 1.08rem;
     text-decoration: none;
     font-weight: 600;
@@ -1160,7 +1057,7 @@ nav a:hover {
 }
 .footer-link:hover,
 .footer-link:focus {
-    color: #FBBF24;
+    color: var(--header-text);
     transform: translateY(-2px) scale(1.08);
 }
 
@@ -1175,7 +1072,7 @@ nav a:hover {
 }
 
 .footer-social-link {
-    color: #E9D5FF;
+    color: rgb(73, 73, 73);
     font-size: 1.5rem;
     text-decoration: none;
     transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
@@ -1184,7 +1081,7 @@ nav a:hover {
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
-    color: #EC4899;
+    color: var(--header-text);
     transform: scale(1.18);
     text-shadow: 0 0 12px #FBBF24;
 }
@@ -1195,7 +1092,7 @@ nav a:hover {
 
 .footer-copyright {
     text-align: center;
-    color: #E9D5FF;
+    color: rgb(73, 73, 73);
     font-size: 0.98rem;
     margin-top: 32px;
     opacity: 0.8;
@@ -1239,48 +1136,3 @@ nav a:hover {
     background: none !important;
   }
 }
-
-/* Skill card animation */
-.skill-card.animate-skill {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-}
-
-.skill-card.animate-skill.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Add to your style.css */
-
-/* Make #photi-bg-whait cover parent section, with left-side white radial "smoke" effect */
-#photi-bg-whait {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  /* Radial gradient: left side white "smoke", right side transparent */
-  background: radial-gradient(circle at 8% 15%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.45) 25%, rgba(255,255,255,0.08) 45%, transparent 100%);
-}
-
-/* Ensure parent section and container are positioned for absolute child */
-.royal-sakura-about {
-  position: relative;
-  overflow: hidden;
-}
-
-.about-photo-wrap {
-  position: relative;
-  z-index: 1;
-}
-
-.about-content {
-  position: relative;
-  z-index: 2;
-  /* The background will not cover this content */
-}
-

@@ -1,11 +1,55 @@
 /* --- Base Colors --- */
 :root {
-    --royal-indigo: #1E1B4B;
-    --sakura-pink: #EC4899;
+    --royal-indigo: #8f8db3;
+    --sakura-pink: #000000;
     --golden-yellow: #FBBF24;
     --lavender: #E9D5FF;
     --lavender-light: #FDF4FF;
     --white: #fff;
+}
+
+/* --- Page background and base text color --- */
+body.about-bg {
+    background: rgb(244, 243, 243) !important;
+    color: rgb(71, 71, 71);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Headings: black and bold --- */
+.hero-title,
+.section-header,
+.about-name,
+.about-container h1,
+.about-container h2,
+.about-container h3,
+h1, h2, h3 {
+    color: #131313 !important;
+    font-weight: 700 !important;
+}
+
+/* --- Normal paragraph and list text (gray) --- */
+.about-paragraph,
+.skills-list li,
+.about-section p,
+.about-section li,
+p, li, span, a {
+    color: rgb(52, 51, 51) !important;
+    font-weight: 400;
+}
+
+/* --- Force any highlight/pink to use black (optional) --- */
+.highlight-pink,
+.accent-gradient {
+    color: #000000 !important;
+    background: none !important;
+}
+
+/* --- Exit button: ensure visible on new background --- */
+.exit-btn {
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
 }
 
 /* --- Body & Background --- */
@@ -77,7 +121,6 @@ body.about-bg {
     height: 4px;
     border-radius: 2px;
     background: var(--sakura-pink);
-    box-shadow: 0 0 12px var(--sakura-pink), 0 0 24px var(--sakura-pink);
     opacity: 0.8;
     animation: underline-glow 1.2s ease-in-out;
 }
@@ -102,12 +145,13 @@ body.about-bg {
 
 /* --- Highlighted Pink Words --- */
 .highlight-pink {
-    color: #EC4899;
-    font-weight: 600;
-    background: rgba(236,72,153,0.08);
-    padding: 2px 6px;
-    border-radius: 6px;
-    box-shadow: 0 0 2px #EC4899;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
 }
 
 /* --- Skills List --- */
@@ -155,6 +199,42 @@ body.about-bg {
 .skill-item:hover .skill-icon {
     filter: drop-shadow(0 0 16px var(--sakura-pink));
     color: var(--golden-yellow);
+}
+
+/* Remove background from skills and make hover text black & bold */
+.skills-list .skill-item {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgb(110, 108, 108); /* normal text */
+  transition: color 0.18s ease, font-weight 0.18s ease;
+  cursor: pointer;
+}
+
+.skills-list .skill-item .skill-icon {
+  color: rgb(110, 108, 108);
+  margin-right: 8px;
+  font-weight: 400;
+}
+
+/* Hover: text (including icon) turns black and bold, no background */
+.skills-list .skill-item:hover,
+.skills-list .skill-item:hover .skill-icon {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+/* Remove all text shadows on the about page */
+.royal-sakura-about,
+.about-content,
+.hero-title,
+.hero-subtitle,
+.section-header,
+.about-paragraph,
+.skills-list .skill-item,
+.highlight-pink,
+h1, h2, h3, p, span, a {
+  text-shadow: none !important;
 }
 
 /* --- Animations --- */
