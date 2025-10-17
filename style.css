@@ -170,6 +170,13 @@ nav a:hover {
     color: var(--text-primary);
     margin-bottom: 10px;
 }
+@media (max-width: 900px){
+    #welcome-banner {
+        background: none;
+        height: calc(70vh - 70px);
+    }
+    
+}
 
 /* Royal Sakura About Section */
 .royal-sakura-about {
