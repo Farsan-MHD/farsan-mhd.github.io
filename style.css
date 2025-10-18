@@ -76,7 +76,7 @@ body{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 15px 15px;
+    padding: 0 15px;
     background: #dadadf;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     position: fixed;
@@ -85,8 +85,8 @@ body{
 }
 
 #logo {
-    font-size: 2rem;
-    font-weight: bold;
+    height: 100%;
+    width: 70px;
 }
 
 nav {
@@ -124,7 +124,14 @@ nav a:hover {
         gap: 12px;
         width: 100%;
         display: none;
-        background: #2A255C;
+        background: rgba(129, 127, 127, 0.9);
+        padding: 10px 0;
+    }
+    .text-primary {
+        padding: 12px 0;
+        width: 100%;
+        text-align: right;
+        color: #fff;
     }
     nav.active {
         padding-right: 20px;
@@ -140,7 +147,7 @@ nav a:hover {
 /*  for the welcome banner style  */
 #welcome-banner {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(90vh - 70px);
     display: flex;
     /* Position image on right, cover at least 60% from top */
     background: url('../images/welcome-image.webp') no-repeat right top;
@@ -150,7 +157,6 @@ nav a:hover {
 }
 
 .welcome-text {
-    
     padding-left: 42px;
     display: flex;
     flex-direction: column;
@@ -173,9 +179,14 @@ nav a:hover {
 @media (max-width: 900px){
     #welcome-banner {
         background: none;
-        height: calc(70vh - 70px);
+        height: calc(90vh - 70px);
     }
-    
+    .welcome-text{
+        padding: 0 24px;
+    }
+    #welcome-inner-text{
+        font-size: 2rem;
+    }
 }
 
 /* Royal Sakura About Section */
