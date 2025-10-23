@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Farsan MHD</title>
+    <link rel="stylesheet" href="style sheets/about.css">
+</head>
+<body class="about-bg">
+    <!-- Exit Button (top-left) -->
+    <a href="index.html" class="exit-btn" style="position:fixed;top:20px;left:20px;z-index:1000;background:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:bold;">
+        &#10005; Exit
+    </a>
+    <!-- Hero Banner -->
+    <section class="hero-banner animate-fade-top">
+        <h1 class="hero-title">About Me</h1>
+    </section>
+
+    <main class="about-content">
+        <blockquote class="about-quote">
+            <span class="highlight-quote">“I believe technology should serve people — not the other way around.”</span>
+        </blockquote>
+        <!-- Introduction -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Introduction</h2>
+            <p class="about-paragraph animate-fade-left">
+                Hi, I’m Farsan MHD, a passionate learner focused on data management, Excel automation, and web development. I love creating smart and practical digital solutions that make work easier and more efficient.
+            </p>
+        </section>
+
+        <!-- Career & Experience -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Career & Experience</h2>
+            <p class="about-paragraph animate-fade-right">
+                My professional journey began in stock and data management, where I developed strong skills in organization, accuracy, and responsibility. Over time, I expanded my passion for technology by learning Excel automation, data analysis, and web development. I’ve dedicated myself to mastering digital tools that improve efficiency and simplify business operations. My drive for continuous growth inspires me to keep learning, adapt to new challenges, and build a meaningful career in the tech field.
+            </p>
+        </section>
+
+        <!-- Skills Overview -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Skills Overview</h2>
+            <ul class="skills-list">
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> Web Development</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> Stock Management, Data Entry</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span>Basic Computer Technology</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span> Excel (advanced)</li>
+                <li class="skill-item animate-skill"><span class="skill-icon">&#10003;</span>Graphic Design ( Canva )</li>
+            </ul>
+        </section>
+
+        <!-- Vision & Goals -->
+        <section class="about-section">
+            <h2 class="section-header animate-slide-up">Vision & Goals</h2>
+            <p class="about-paragraph animate-fade-left">
+                My vision is to build a strong career in <span class="highlight-pink">technology</span> by mastering 
+                <span class="highlight-pink">data management</span>, <span class="highlight-pink">Excel automation</span>, 
+                and <span class="highlight-pink">web development</span>. I aim to help businesses work smarter through 
+                organized data, efficient systems, and creative <span class="highlight-pink">digital solutions</span>. 
+                My ultimate goal is to grow into a versatile professional who bridges the gap between 
+                <span class="highlight-pink">data</span>, <span class="highlight-pink">design</span>, and 
+                <span class="highlight-pink">technology</span> — creating tools that make everyday work simpler, 
+                smarter, and more impactful.
+            </p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const animatedEls = document.querySelectorAll('.animate-fade-left, .animate-fade-right, .animate-slide-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            animatedEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

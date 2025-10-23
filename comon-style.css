@@ -1,0 +1,35 @@
+.btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgb(217, 214, 214);
+    color: rgb(110, 108, 108);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: none;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    color: #000000;
+}
+
+.Exite-btn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contact-nav-btn {
+        display: none !important; /* use !important if needed to override other styles */
+    }
+}
