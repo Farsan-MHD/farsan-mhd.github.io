@@ -36,8 +36,8 @@ main {
 .header {
     position: fixed;
     top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: auto;
+    transform: translateY(10%);
     width: 100%;
     max-width: 1200px; /* match main's max-width */
     z-index: 999;
