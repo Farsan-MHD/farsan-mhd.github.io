@@ -347,78 +347,118 @@ main {
 
 /* ==================== PROJECTS SECTION ==================== */
 .projects-section {
-  padding: 80px 20px;
-  background: transparent;
-  text-align: center;
-  color: var(--title-dark);
-}
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 50px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--title-dark);
+    padding: 5rem 0;
+    background: #f8f9fa;
 }
 
-/* Project container (3 cards layout) */
+.projects-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.projects-header .subtitle {
+    color: #007bff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
 .projects-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Project card base */
-.project-card {
-  background: transparent;
-  width: 280px;
-  height: 200px;
-  perspective: 1000px; /* Enables 3D effect */
+.project-card.mobile-frame {
+    background: #333;
+    border-radius: 2.5rem;
+    padding: 0.75rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    aspect-ratio: 9/19;
+    width: 280px;
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-/* Inner card rotates on hover */
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.project-card.mobile-frame:hover {
+    transform: translateY(-10px);
 }
 
-.project-card:hover .card-inner {
-  transform: rotateY(180deg);
+.mobile-notch {
+    background: #333;
+    height: 1.5rem;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    z-index: 2;
 }
 
-/* Front & back of the card: use white cards with subtle shadow */
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 10px 25px rgba(15,23,42,0.06);
-  background: var(--card-bg);
+.mobile-content {
+    height: 100%;
+    background: #fff;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Keep back rotated */
-.card-back { transform: rotateY(180deg); }
-
-/* Text styling */
-.card-front h3, .card-back h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--primary);
+.project-title {
+    padding: 1.5rem 1rem 1rem;
+    margin: 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #333;
 }
-.card-front p {
-  font-size: 0.9rem;
-  color: var(--muted);
-  opacity: 1;
+
+.project-preview {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.project-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-btn {
+    margin: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.5rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+    background: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card.mobile-frame {
+        width: 260px;
+    }
 }
 
 /* ==================================================================== */
@@ -548,7 +588,7 @@ main {
   gap: 28px;
   align-items: start;
 }
-.footer-about .logo-img { width: 130px; display: block; margin-bottom: 12px; }
+.footer-about .logo-img { width: 120px; height: 40px; display: block; margin-bottom: 12px; margin-left: 20px;}
 .footer-about p { color: var(--muted); line-height: 1.6; }
 
 .footer-links h4,
