@@ -38,9 +38,9 @@ navToggle.addEventListener('click', () => {
 
 const roles = [
     "Web Developer",
-    "Graphic Designer",
+    "Graphic Designer ( Canava )",
     "Stock Management Specialist",
-    "Data Entry Clerk",
+    "Data Automation Specialist",
     "Excel Advanced User"
 ];
 

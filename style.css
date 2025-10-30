@@ -33,158 +33,6 @@ main {
 
 /* Header */
 /* ===== HEADER BASE ===== */
-.header {
-    position: fixed;
-    top: 15px;
-    left: auto;
-    transform: translateY(10%);
-    width: 100%;
-    max-width: 1200px; /* match main's max-width */
-    z-index: 999;
-    transition: transform 0.3s ease;
-}
-
-/* Hide when scrolling down */
-.header.hide {
-  transform: translateY(-120%);
-}
-
-/* Header container layout */
-.header-container {
-    margin: 0 20px;
-    background: var(--card-bg);
-    border-radius: 20px;
-    padding: 0.8rem 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px -1px rgba(15,23,42,0.1);
-}
-
-/* Logo styles */
-.logo {
-    display: block;
-}
-
-.logo-img {
-    height: 40px;
-    width: 120px;
-}
-
-/* Navigation styles */
-.nav-list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav-link {
-  color: var(--title-dark);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-.nav-link:hover {
-  color: var(--muted);
-}
-
-/* Mobile navigation toggle */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5em;
-}
-
-.hamburger {
-  display: block;
-  position: relative;
-  width: 24px;
-  height: 2px;
-  background: var(--title-dark);
-}
-.hamburger::before,
-.hamburger::after {
-  background: var(--title-dark);
-}
-
-/* Mobile navigation styles */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-        position: relative;
-        z-index: 100;
-    }
-
-    .nav {
-        position: fixed;
-        top: 80px; /* Adjust based on your header height */
-        left: 0;
-        width: 100%;
-        background: var(--card-bg);
-        padding: 1.5rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .nav.nav-open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    /* Hamburger icon */
-    .hamburger {
-        width: 24px;
-        height: 2px;
-        background: var(--title-dark);
-        display: block;
-        position: relative;
-        transition: all 0.3s ease;
-    }
-
-    .hamburger::before,
-    .hamburger::after {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 2px;
-        background: var(--title-dark);
-        left: 0;
-        transition: all 0.3s ease;
-    }
-
-    .hamburger::before {
-        top: -8px;
-    }
-
-    .hamburger::after {
-        bottom: -8px;
-    }
-
-    /* Hamburger animation */
-    .nav-toggle[aria-expanded="true"] .hamburger {
-        background: transparent;
-    }
-
-    .nav-toggle[aria-expanded="true"] .hamburger::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .nav-toggle[aria-expanded="true"] .hamburger::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
-}
 
 /* ================================================================ */
 /* Intro text colours */
@@ -226,6 +74,7 @@ main {
 .typewriter {
     font-size: 1.2rem;
     min-height: 1.8em;
+    margin-bottom: 10px;
 }
 
 #typed-text {
@@ -288,6 +137,17 @@ main {
   min-height: 240px;
   display: flex;
   flex-direction: column;
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms cubic-bezier(.2,.9,.2,1);
+  transform-origin: center;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+}
+
+.service-card:hover,
+.service-card:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(2,6,23,0.12);
+  z-index: 2;
 }
 
 .service-icon {
@@ -334,6 +194,14 @@ main {
   color: var(--primary);
   font-weight: 600;
   text-decoration: none;
+  display: inline-block;
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.service-card:hover .read-more,
+.service-card:focus .read-more {
+  transform: translateX(6px);
+  color: var(--primary);
 }
 
 /* Responsive */
