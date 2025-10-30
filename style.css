@@ -15,16 +15,6 @@
     scroll-behavior: smooth;
 }
 
-/* Body & page colors */
-body {
-  background: var(--page-bg);
-  color: var(--title-dark);
-  width: 100%;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
 main {
     max-width: 1200px;
     margin: 0 auto;

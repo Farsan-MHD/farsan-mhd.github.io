@@ -32,15 +32,37 @@
   </style>
 </head>
 <body>
+  <main>
   <!-- Page loader -->
   <section id="pageloaded-animation">
     <div class="loader-dots"><span></span><span></span><span></span><span></span></div>
   </section>
 
-  <!-- Exit Button (top-left) -->
-  <a href="index.html" class="exit-btn" style="position:fixed;top:20px;left:20px;z-index:1000;background:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:bold;">
-    &#10005; Exit
-  </a>
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="images/Farsan MHD logo.webp" alt="Farsan MHD" class="logo-img">
+      </a>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#intro-banner" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="certificate.html" class="nav-link active">Certification</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="ressume.html" class="nav-link">Resume</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#contact" class="btn contact-nav-btn">Let's Connect</a>
+    </div>
+  </header>
 
   <section id="certificates" class="certificates-section">
     <div class="certificates-container">
@@ -82,6 +104,9 @@
     <button id="cert-modal-close" aria-label="Close certificate">&#10005;</button>
     <img id="cert-modal-img" src="" alt="Certificate Large View">
   </div>
+  </main>
+
+  <script src="script.js"></script>
 
   <script>
     // show loader until page fully loaded

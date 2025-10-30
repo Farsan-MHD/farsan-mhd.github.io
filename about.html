@@ -5,18 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Farsan MHD</title>
     <link rel="stylesheet" href="style sheets/about.css">
+    <link rel="stylesheet" href="comon-style.css">
 </head>
-<body class="about-bg">
-    <!-- Exit Button (top-left) -->
-    <a href="index.html" class="exit-btn" style="position:fixed;top:20px;left:20px;z-index:1000;background:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-weight:bold;">
-        &#10005; Exit
-    </a>
+<body>
+    <main>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="images/Farsan MHD logo.webp" alt="Farsan MHD" class="logo-img">
+            </a>
+
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#intro-banner" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                    <li><a href="certificate.html" class="nav-link">Certification</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="ressume.html" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="btn contact-nav-btn">Let's Connect</a>
+        </div>
+    </header>
+
     <!-- Hero Banner -->
     <section class="hero-banner animate-fade-top">
         <h1 class="hero-title">About Me</h1>
     </section>
 
-    <main class="about-content">
+    <div class="about-content">
         <blockquote class="about-quote">
             <span class="highlight-quote">“I believe technology should serve people — not the other way around.”</span>
         </blockquote>
@@ -62,7 +86,9 @@
                 smarter, and more impactful.
             </p>
         </section>
+    </div>
     </main>
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const animatedEls = document.querySelectorAll('.animate-fade-left, .animate-fade-right, .animate-slide-up');

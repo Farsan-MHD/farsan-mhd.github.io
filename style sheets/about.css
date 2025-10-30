@@ -8,14 +8,6 @@
     --white: #fff;
 }
 
-/* --- Page background and base text color --- */
-body.about-bg {
-    background: rgb(244, 243, 243) !important;
-    color: rgb(71, 71, 71);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 /* --- Headings: black and bold --- */
 .hero-title,
 .section-header,
@@ -38,19 +30,6 @@ p, li, span, a {
     font-weight: 400;
 }
 
-/* --- Force any highlight/pink to use black (optional) --- */
-.highlight-pink,
-.accent-gradient {
-    color: #000000 !important;
-    background: none !important;
-}
-
-/* --- Exit button: ensure visible on new background --- */
-.exit-btn {
-    background: #ffffff !important;
-    color: #000000 !important;
-    box-shadow: none !important;
-}
 
 .highlight-quote {
     color: rgb(73, 73, 73);;
@@ -65,19 +44,10 @@ p, li, span, a {
     display: inline-block;
 }
 
-/* --- Body & Background --- */
-body.about-bg {
-    background: var(--royal-indigo);
-    color: var(--lavender);
-    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-    margin: 0;
-    width: 100%;
-}
-
 /* --- Hero Banner --- */
 .hero-banner {
     width: 100%;
-    min-height: 250px;
+    min-height: 400px;
     background: linear-gradient(120deg, var(--royal-indigo) 80%, var(--sakura-pink) 100%);
     text-align: center;
     box-shadow: 0 6px 32px 0 rgba(236,72,153,0.08);
@@ -85,6 +55,7 @@ body.about-bg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 0 0 32px 32px;
 }
 
 .hero-title {

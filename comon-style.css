@@ -6,6 +6,29 @@
   --title-dark: #0f1724;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--title-dark);
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .header {
     position: fixed;
     top: 15px;
@@ -30,7 +53,7 @@
     padding: 0.8rem 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
     box-shadow: 0 4px 6px -1px rgba(15,23,42,0.1);
 }
 
@@ -177,13 +200,6 @@
 .btn:hover {
     transform: translateY(-2px);
     color: #000000;
-}
-
-.Exite-btn{
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
 }
 
 .text-center {
