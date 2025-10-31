@@ -118,3 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', typeWriter);
+
+// Page Loader
+document.addEventListener("DOMContentLoaded", function() {
+    const loader = document.getElementById("pageloader");
+    
+    window.addEventListener("load", function() {
+        setTimeout(() => {
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            
+            setTimeout(() => {
+                loader.remove();
+            }, 500);
+        }, 500);
+    });
+});
