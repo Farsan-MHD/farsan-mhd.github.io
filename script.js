@@ -38,10 +38,10 @@ navToggle.addEventListener('click', () => {
 
 const roles = [
     "Web Developer",
-    "Graphic Designer ( Canava )",
-    "Stock Management Specialist",
-    "Data Automation Specialist",
-    "Excel Advanced User"
+    "Data Analytics & Automation Specialist",
+    "Excel Expert",
+    "Stock Management",
+    "Graphic Designer ( Canva )"
 ];
 
 function typeWriter() {

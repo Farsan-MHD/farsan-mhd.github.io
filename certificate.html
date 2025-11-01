@@ -6,38 +6,17 @@
   <title>Certificates</title>
   <link rel="stylesheet" href="/style sheets/certificate.css" />
   <link rel="stylesheet" href="comon-style.css">
-  <style>
-    /* Minimal loader styles (ensures loader works even if CSS file missing) */
-    #pageloaded-animation {
-      position: fixed;
-      inset: 0;
-      background: #ffffff;
-      z-index: 4000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 1.35s ease, visibility 1s;
-    }
-    #pageloaded-animation.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    html.pg-loading, body.pg-loading { overflow: hidden; }
-    .loader-dots { display:flex; gap:10px; }
-    .loader-dots span {
-      width:14px; height:14px; border-radius:50%; background:#EC4899;
-      animation: loader-bounce .9s infinite alternate ease-in-out;
-    }
-    .loader-dots span:nth-child(2){ animation-delay:.12s; }
-    .loader-dots span:nth-child(3){ animation-delay:.24s; }
-    .loader-dots span:nth-child(4){ animation-delay:.36s; }
-    @keyframes loader-bounce { to { transform: translateY(-16px); opacity:.65 } }
-  </style>
 </head>
 <body>
   <main>
-  <!-- Page loader -->
-  <section id="pageloaded-animation">
-    <div class="loader-dots"><span></span><span></span><span></span><span></span></div>
-  </section>
-
+    <div id="pageloader">
+        <div class="loader-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
   <!-- Header Navigation -->
   <header class="header" id="header">
     <div class="header-container">

@@ -9,6 +9,14 @@
 </head>
 <body>
     <main>
+        <div id="pageloader">
+        <div class="loader-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
     <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="header-container">
@@ -108,7 +116,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.4 });
 
             animatedEls.forEach(el => observer.observe(el));
         });
