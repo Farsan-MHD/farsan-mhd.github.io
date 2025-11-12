@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates</title>
+  <link rel="stylesheet" href="/style sheets/certificate.css" />
+  <link rel="stylesheet" href="comon-style.css">
+</head>
+<body>
+  <main>
+    <div id="pageloader">
+        <div class="loader-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="images/Farsan MHD logo.webp" alt="Farsan MHD" class="logo-img">
+      </a>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#intro-banner" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="certificate.html" class="nav-link active">Certification</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="ressume.html" class="nav-link">Resume</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#contact" class="btn contact-nav-btn">Let's Connect</a>
+    </div>
+  </header>
+
+  <section id="certificates" class="certificates-section">
+    <div class="certificates-container">
+      <h2 class="cert-title">My Certificates</h2>
+
+      <div class="cert-grid">
+        <!-- Certificate 1 -->
+        <div class="certificate-card">
+          <img src="images/certificates/webdevalopment certifiacte.webp" alt="Web Development" class="certificate-img enlargeable">
+          <div class="certificate-info">
+            <h3 class="certificate-name">Web Development</h3>
+            <p class="certificate-meta">Issued by Coursera – 2024</p>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="certificate-card">
+          <img src="images/certificates/computer tecnology & data entry.webp" alt="Computer Technology & Data Entry" class="certificate-img enlargeable">
+          <div class="certificate-info">
+            <h3 class="certificate-name">Computer Technology & Data Entry</h3>
+            <p class="certificate-meta">Issued by IDHS – 2025</p>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="certificate-card">
+          <img src="" alt="Coming Soon" class="certificate-img enlargeable">
+          <div class="certificate-info">
+            <h3 class="certificate-name">Data Analytics</h3>
+            <p class="certificate-meta">Issued by IDHS – 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for enlarged image -->
+  <div id="cert-modal" aria-hidden="true">
+    <button id="cert-modal-close" aria-label="Close certificate">&#10005;</button>
+    <img id="cert-modal-img" src="" alt="Certificate Large View">
+  </div>
+  </main>
+
+  <script src="script.js"></script>
+
+  <script>
+    // show loader until page fully loaded
+    document.documentElement.classList.add('pg-loading');
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('pageloaded-animation');
+      if (!loader) return;
+      loader.classList.add('hidden');
+      document.documentElement.classList.remove('pg-loading');
+      document.body.classList.remove('pg-loading');
+      // remove from flow after fade
+      setTimeout(function(){ if(loader) loader.style.display='none'; }, 380);
+    });
+
+    // Modal functionality: attach after DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('cert-modal');
+      var modalImg = document.getElementById('cert-modal-img');
+      var closeBtn = document.getElementById('cert-modal-close');
+
+      function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Certificate';
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden','false');
+      }
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden','true');
+        modalImg.src = '';
+      }
+
+      // ensure cursor pointer and click handler
+      document.querySelectorAll('.certificate-img.enlargeable').forEach(function(img){
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function(){
+          openModal(img.src, img.alt);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      // close when clicking outside image
+      modal.addEventListener('click', function(e){
+        if (e.target === modal) closeModal();
+      });
+      // close on ESC
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+  </script>
+</body>
+</html>
