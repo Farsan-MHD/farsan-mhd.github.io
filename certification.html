@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="style folder/certificate.css">
+    <title>Farsan MHD | Certification Page</title>
+</head>
+<body>
+    <header id="site-header" class="header_navbar">
+        <nav class="navbar">
+            <div class="logo">
+                <!-- <h2>Farsan MHD</h2> -->
+                <h1>Farsan MHD</h1>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html#Home">Home</a></li>
+                <li><a href="about.html#about">About</a></li>
+                <li><a href="index.html#services">Service</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="certification.html">Certification</a></li>
+            </ul>
+
+            <button class="btn-class">Let's Connect</button>
+        </nav>
+    </header>
+
+    <main id="main-container">
+        <section class="section certificates">
+            <h1 class="header-text">Certifications</h1>
+
+            <div class="cert-grid" id="cert-grid">
+                <!-- replace src with your real certification images -->
+                <button class="cert-item" data-index="0"><img src="image folder/certificates/Business Analytics With Excel.webp" alt="Certificate 1"></button>
+                <button class="cert-item" data-index="1"><img src="image folder/certificates/Computer Technology & Data Entry.webp" alt="Certificate 2"></button>
+                <button class="cert-item" data-index="1"><img src="image folder/certificates/Computer Technology & Data Entry transcript.webp" alt="Certificate 2"></button>
+                <button class="cert-item" data-index="2"><img src="image folder/certificates/Cybersecurity in Finance.webp" alt="Certificate 3"></button>
+                <button class="cert-item" data-index="3"><img src="image folder/certificates/Encoder-Decoder Architecture.webp" alt="Certificate 4"></button>
+                <button class="cert-item" data-index="4"><img src="image folder/certificates/GIT Training.webp" alt="Certificate 5"></button>
+                <button class="cert-item" data-index="5"><img src="image folder/certificates/Webdevalopment.webp" alt="Certificate 6"></button>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" aria-hidden="true" tabindex="-1">
+            <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+            <button class="lb-prev" id="lb-prev" aria-label="Previous">&#10094;</button>
+
+            <div class="lb-inner" id="lb-inner" role="dialog" aria-modal="true">
+                <img src="" alt="" id="lb-image">
+            </div>
+
+            <button class="lb-next" id="lb-next" aria-label="Next">&#10095;</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="script folder/certificate.js" defer></script>
+</body>
+</html>

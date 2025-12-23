@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --navbar-bg: #2563EB;
+    --button-bg: #3B82F6;
+    --button-text: #FFFFFF;
+    --paragraph-text: #4B5563;
+    --line-color: #E5E7EB;
+    --section-bg: #FFFFFF;
+}
+
+.text-color{
+    color: var(--paragraph-text);
+}
+
+/* Common button styles */
+.btn-class {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-class:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #000;
+}
+
+.btn-class:active {
+    transform: translateY(0);
+}
+
+/* Common section styles */
+.section {
+    width: 100%;
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+/* Common header text styles */
+.header-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* body to all the pages */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Header responsive navbar */
+#site-header {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    top: 20px;
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: var(--navbar-bg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: transform 0.28s ease, top 0.28s ease, bottom 0.28s ease;
+    border-radius: 5px;
+}
+
+/* add a single `hidden` class that will move header out of view.
+   On desktop this moves it up; on mobile (overridden below) it will move it down. */
+#site-header.hidden {
+    transform: translateX(-50%) translateY(-150%);
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo h1 {
+    color: var(--button-text);
+}
+
+/* Desktop nav links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--button-text);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: var(--paragraph-text);
+    transform: translateY(-2px);
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--button-text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    #site-header {
+        width: calc(100% - 20px);
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        top: auto;
+        bottom: 20px;
+        border-radius: 10px;
+    }
+
+    /* On mobile we want `.hidden` to move header downward (off-screen) */
+    #site-header.hidden {
+        transform: translateX(-50%) translateY(150%);
+    }
+
+    .hamburger {
+        display: flex;
+        order: 2;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: auto;
+        bottom: calc(20px + 60px); /* menu appears above bottom header */
+        right: 20px;
+        width: calc(100% - 40px);
+        max-width: 360px;
+        background: var(--navbar-bg);
+        flex-direction: column;
+        gap: 0;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        transform-origin: top right;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .nav-links.active {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+    }
+
+    /* Hamburger animation */
+    .hamburger[aria-expanded="true"] span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+#main-container{
+    width: 1200px;
+    max-width: 1200px;
+    padding-top: 70px;
+}
