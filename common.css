@@ -212,6 +212,10 @@ body {
     .hamburger[aria-expanded="true"] span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
+
+    .nav-btn{
+        display: none;
+    }
 }
 
 #main-container{
