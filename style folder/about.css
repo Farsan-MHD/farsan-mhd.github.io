@@ -1,0 +1,530 @@
+/* About Page Styles */
+:root {
+    --navbar-bg: #2563EB;
+    --button-bg: #3B82F6;
+    --button-text: #FFFFFF;
+    --paragraph-text: #4B5563;
+    --line-color: #E5E7EB;
+    --section-bg: #FFFFFF;
+    --accent-color: #2563EB;
+    --light-bg: #F8F9FA;
+}
+
+main#main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+}
+
+/* About Hero Section */
+.about-hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.about-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-hero-content h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+.about-intro {
+    font-size: 1.3rem;
+    color: var(--paragraph-text);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* About Info Section */
+.about-info {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 60px 40px;
+    margin-bottom: 50px;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.info-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.info-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.info-text p {
+    font-size: 1.1rem;
+    color: var(--paragraph-text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Statistics Boxes */
+.info-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.stat-box p {
+    font-size: 0.95rem;
+    color: var(--paragraph-text);
+    font-weight: 500;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 60px 40px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--paragraph-text);
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-category {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 4px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    padding: 10px 0;
+    color: var(--paragraph-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills-list li:last-child {
+    border-bottom: none;
+}
+
+.skills-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 60px 40px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.experience-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.experience-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.experience-item h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.exp-duration {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.experience-item p {
+    color: var(--paragraph-text);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Why Choose Me Section */
+.why-choose {
+    padding: 60px 40px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    color: var(--paragraph-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #1d4ed8 100%);
+    border-radius: 10px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-cta {
+    background-color: white;
+    color: var(--accent-color);
+    font-weight: 700;
+    padding: 12px 35px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.btn-cta:hover {
+    background-color: #f0f0f0;
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main#main-container {
+        margin: 90px auto 0;
+    }
+
+    .about-hero {
+        height: 50vh;
+        padding: 40px 20px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-intro {
+        font-size: 1.1rem;
+    }
+
+    .about-info {
+        padding: 40px 20px;
+    }
+
+    .info-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .info-text h2 {
+        font-size: 2rem;
+    }
+
+    .info-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .stat-box {
+        padding: 20px 15px;
+    }
+
+    .stat-box h3 {
+        font-size: 2rem;
+    }
+
+    .skills-section,
+    .experience-section,
+    .why-choose {
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-section {
+        padding: 40px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+    }
+
+    .experience-item {
+        padding: 20px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        height: 40vh;
+    }
+
+    .about-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+    }
+
+    .info-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-box p {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .benefit-icon {
+        font-size: 2rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-content p {
+        font-size: 0.95rem;
+    }
+
+    .btn-cta {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
