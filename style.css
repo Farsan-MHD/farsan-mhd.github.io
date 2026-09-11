@@ -523,6 +523,53 @@ body {
    HERO CONTAINER
    ========================= */
 
+/* Hero Background Image + Parallax */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: fixed;
+    inset: -10% 0;
+    z-index: 0;
+
+    background-image: url("../images/hero-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 20, 0.92) 0%,
+        rgba(5, 10, 20, 0.78) 45%,
+        rgba(5, 10, 20, 0.45) 100%
+    );
+}
+
+/* Keep all existing hero content above the background */
+.hero-container,
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-bg {
+        inset: -5% 0;
+    }
+}
+
 .hero-container {
     width: 100%;
     max-width: 1250px;
