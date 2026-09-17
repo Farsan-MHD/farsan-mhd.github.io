@@ -1358,6 +1358,10 @@ body {
 
 }
 
+.about-more{
+    margin-top: 20px;
+}
+
 /* =========================
    SKILLS SECTION
    ========================= */
@@ -2707,4 +2711,174 @@ a.contact-value:hover {
         transition: none;
     }
 
+}
+
+.about-footer{
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 70px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+    position: relative;
+
+    padding: 0 7% 32px;
+
+    background: var(--bg-primary);
+
+    border-top: 1px solid var(--border-primary);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+
+    padding: 28px 0 18px;
+}
+
+.footer-brand {
+    max-width: 420px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--text-primary);
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-mark {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-md);
+
+    background: var(--accent-primary);
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.footer-name {
+    font-size: 15px;
+    letter-spacing: -0.2px;
+}
+
+.footer-brand p {
+    margin-top: 14px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-nav a,
+.footer-contact a {
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: color var(--transition-normal);
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+    color: var(--accent-secondary);
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.footer-bottom {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border-primary);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .site-footer {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-contact {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 0 20px 24px;
+    }
+
+    .footer-container {
+        padding-top: 24px;
+    }
+
+    .footer-nav {
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .footer-brand p,
+    .footer-nav a,
+    .footer-contact a {
+        font-size: 12px;
+    }
 }
