@@ -779,7 +779,7 @@ body {
 
 .scroll-indicator {
     position: absolute;
-
+    z-index: 1;
     bottom: 30px;
     left: 7%;
 
